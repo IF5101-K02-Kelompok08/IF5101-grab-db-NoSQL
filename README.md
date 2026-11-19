@@ -39,3 +39,17 @@ docker compose -f docker/compose.yaml down
 The workflow `.github/workflows/nosql-smoke.yml` runs automatically on PRs to `main`, pushes to `main`, and manual dispatch. It creates disposable services on a GitHub-hosted runner. CI credentials are for CI-only disposable containers, never production.
 
 **Scope:** This is an infrastructure + basic operations smoke test, not a benchmark or complete validation of all IF5101 functional and nonfunctional requirements.
+
+### Canonical Dataset Verification
+
+Dataset acuan dibangkitkan menggunakan generator sintetis dari proyek Part 2 dengan profil `nosql` dan random seed 42. Untuk memastikan seluruh anggota kelompok menggunakan dataset yang identik, setiap file CSV divalidasi terhadap `data/canonical/manifest.json`.
+
+Jalankan:
+
+```bash
+uv run python scripts/verify_canonical.py
+```
+
+Skrip akan memverifikasi keberadaan seluruh CSV, kesesuaian kolom, jumlah baris, ukuran file, dan checksum SHA-256. Proses verifikasi dilakukan secara streaming agar tidak memerlukan pemuatan seluruh dataset ke memori.
+
+Pengujian dinyatakan berhasil apabila seluruh CSV sesuai dengan manifest yang tersimpan dalam repository.
