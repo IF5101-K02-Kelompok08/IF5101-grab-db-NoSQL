@@ -1,0 +1,16 @@
+[project]
+name = "if5101-grab-db-nosql"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=40.54.0",
+    "ipykernel>=7.4.0",
+    "matplotlib>=3.11.2",
+    "nbconvert>=7.17.2",
+    "pandas>=3.1.1",
+    "pymemcache>=4.0.0",
+    "pytest>=9.2.0",
+    "python-dotenv>=1.2.4",
+    "pyyaml>=6.0.3",
+    "requests>=2.34.2",
+]
