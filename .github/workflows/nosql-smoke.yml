@@ -1,0 +1,45 @@
+name: NoSQL Smoke Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      COUCHDB_USER: ci_admin
+      COUCHDB_PASSWORD: ci_local_only_password
+      COUCHDB_URL: http://127.0.0.1:5984
+      MEMCACHED_HOST: 127.0.0.1
+      MEMCACHED_PORT: "11211"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Start databases
+        run: docker compose -f docker/compose.yaml up -d
+
+      - name: Run smoke tests
+        run: python tests/smoke_test.py
+
+      - name: Print database logs on failure
+        if: failure()
+        run: docker compose -f docker/compose.yaml logs --no-color
+
+      - name: Stop databases
+        if: always()
+        run: docker compose -f docker/compose.yaml down -v --remove-orphans
