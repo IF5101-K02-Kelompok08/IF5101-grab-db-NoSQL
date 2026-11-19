@@ -1,6 +1,8 @@
 services:
   couchdb:
-    image: couchdb:3
+    build:
+      context: .
+      dockerfile: Dockerfile.couchdb
     environment:
       COUCHDB_USER: ${COUCHDB_USER:?Set COUCHDB_USER}
       COUCHDB_PASSWORD: ${COUCHDB_PASSWORD:?Set COUCHDB_PASSWORD}
