@@ -1,0 +1,42 @@
+# taken from: https://github.com/IF5101-K02-Kelompok08/IF5101-grab-db-SQL/blob/main/config/dataset_profile.yaml
+# in commit: 7e9d49f
+seed: 42
+
+# Orders are spread over this period (UTC), and the dataset is a snapshot taken at its end.
+period:
+  start: 2026-05-01
+  end: 2026-11-01
+
+profiles:
+  small:
+    customers: 1000
+    service_orders: 10000
+    driver_partners: 500
+    locations: 2000
+    merchant_outlets: 300
+
+  medium:
+    customers: 10000
+    service_orders: 100000
+    driver_partners: 5000
+    locations: 20000
+    merchant_outlets: 3000
+
+  large:
+    customers: 100000
+    service_orders: 1000000
+    driver_partners: 50000
+    locations: 200000
+    merchant_outlets: 30000
+
+  nosql:
+    customers: 200000
+    service_orders: 2000000
+    driver_partners: 100000
+    locations: 400000
+    merchant_outlets: 60000
+
+order_distribution:
+  mobility: 0.32
+  food: 0.32
+  delivery: 0.36

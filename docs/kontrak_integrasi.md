@@ -5,7 +5,7 @@ Beberapa yang bisa dituliskan di dokumen ini per hari ini (19 Nov 2026), adalah
 |----------|-------------|
 |ID Data   | Gunakan identifier yang konsisten dengan yang sudah ada di Part 2, misalnya kalo nanti di CouchDB mau bikin collection service_orders berarti setiap dokumennya kalo bisa pake order_id yang formatnya "ORDXXXXXXX". |
 |Pembangkitan Dataset | Buat script transformator per DBMS (karena kan skema logisnya beda), yang meng-adjust dari satu canonical dataset yang ada di folder `/data`|
-|Ukuran Dataset| Karena di dokumen [laporan](https://docs.google.com/document/d/1Nsd7lJaTReGwManm9biRvCI3lNn9IFct7Rzb5r5TREM/edit?tab=t.0) itu salah satu alasan NoSQL adalah karena volume data, jadi ukuran datasetnya kita buat 2x profile large di SQL (berarti 200k service_orders sebagai corenya dan sisanya mengikuti)|
+|Ukuran Dataset| Karena di dokumen [laporan](https://docs.google.com/document/d/1Nsd7lJaTReGwManm9biRvCI3lNn9IFct7Rzb5r5TREM/edit?tab=t.0) itu salah satu alasan NoSQL adalah karena volume data, jadi ukuran datasetnya kita buat 2x profile large di SQL (berarti 2mio service_orders sebagai corenya dan sisanya mengikuti)|
 |Random seed| Semua random seed disamain aja pake 42|
 |Query| Ketika membuat query cantumkan comment untuk mapping query tersebut menyelesaikan ID persyaratan PF atau PNF yang mana dan skenario operasi apa yang diuji|
 |Benchmark| setiap query dijalankan 3x, analisisnya dilakukan dalam satuan milidetik (ms), dan dengan 1x warm-up. Khusus untuk memcached, akan diukur juga rate cache hit dan cache miss. Untuk operasi yang mengubah data, kondisi awal yang ekuivalen harus dipulihkan sebelum setiap pengulangan pengukuran agar hasil pengujian dapat dibandingkan secara adil. |
