@@ -1,0 +1,166 @@
+{
+  "dataset_name": "IF5101 Grab NoSQL Canonical Dataset",
+  "source": "Part 2 synthetic data generator",
+  "profile": "nosql",
+  "random_seed": 42,
+  "generated_at": "2026-11-19T14:57:35.897079+00:00",
+  "tables": {
+    "customers": {
+      "rows": 200000,
+      "columns": [
+        "customer_id",
+        "full_name",
+        "phone_number",
+        "email"
+      ],
+      "sha256": "da9bed8140400949856ffdd963f0e51a95394821c01915ea233eb6be10bb9ba6",
+      "size_bytes": 13032999
+    },
+    "delivery_orders": {
+      "rows": 719201,
+      "columns": [
+        "order_id",
+        "package_description",
+        "package_weight",
+        "recipient_name",
+        "recipient_contact"
+      ],
+      "sha256": "b52b781b117e4a686c61fcdb44db8916b524d15dfca5caddb30bbe9607cddaf8",
+      "size_bytes": 43964443
+    },
+    "driver_assignments": {
+      "rows": 3215235,
+      "columns": [
+        "assignment_id",
+        "assigned_at",
+        "assignment_status",
+        "responded_at",
+        "ended_at",
+        "end_reason",
+        "trip_id",
+        "vehicle_id"
+      ],
+      "sha256": "f63de13fc670e955a9c197da7d03d75810ff3900f0ab1309d6ef27ec7b91b0e2",
+      "size_bytes": 400660833
+    },
+    "driver_partners": {
+      "rows": 100000,
+      "columns": [
+        "driver_partner_id",
+        "full_name",
+        "phone_number",
+        "email",
+        "driver_status"
+      ],
+      "sha256": "dc272958e65e78c9d905093e2a5f622fdfc197dde6cb136df66838c106693ffb",
+      "size_bytes": 8029527
+    },
+    "food_orders": {
+      "rows": 640665,
+      "columns": [
+        "order_id",
+        "preparation_status",
+        "delivery_notes",
+        "merchant_outlet_id"
+      ],
+      "sha256": "0befdb40239347e01c1a030afcea94570e5bc67c144665b885c6e27f5aef9639",
+      "size_bytes": 23003327
+    },
+    "locations": {
+      "rows": 400000,
+      "columns": [
+        "location_id",
+        "latitude",
+        "longitude",
+        "address",
+        "service_area_id"
+      ],
+      "sha256": "812a7f361e5d05a47289d82157c76298c9f9a6974e9c500e94ad984fdc6dc132",
+      "size_bytes": 35995749
+    },
+    "merchant_outlets": {
+      "rows": 60000,
+      "columns": [
+        "merchant_outlet_id",
+        "outlet_name",
+        "outlet_status",
+        "location_id"
+      ],
+      "sha256": "6b8b83c14f1e503f7f802d6b8e564353a2c39629e8e866666fc83c001541b1df",
+      "size_bytes": 2691060
+    },
+    "mobility_orders": {
+      "rows": 640134,
+      "columns": [
+        "order_id",
+        "ride_type",
+        "passenger_count",
+        "pickup_notes"
+      ],
+      "sha256": "cab29a042a80438bbf2e4fd17d5fb99ef4baaba032591ce943136327ef766b28",
+      "size_bytes": 18436333
+    },
+    "payments": {
+      "rows": 2000000,
+      "columns": [
+        "payment_id",
+        "payment_method",
+        "payment_status",
+        "amount",
+        "paid_at",
+        "order_id"
+      ],
+      "sha256": "4b6b81acc6aeab9f6bc8916d856f84a1e968538455bcf98fd7e1613aebdb4a93",
+      "size_bytes": 136938417
+    },
+    "service_areas": {
+      "rows": 23,
+      "columns": [
+        "service_area_id",
+        "area_name",
+        "city",
+        "area_status"
+      ],
+      "sha256": "51ce6d0835f7015d87d6b358fff2decba86c085af4ff2ae0a112cc5acb0b8b93",
+      "size_bytes": 905
+    },
+    "service_orders": {
+      "rows": 2000000,
+      "columns": [
+        "order_id",
+        "created_at",
+        "order_status",
+        "total_amount",
+        "customer_id"
+      ],
+      "sha256": "ac55d94b91ef5df61acc07acc1ba3c2725318cd235eefa2751d3f83b3f80150e",
+      "size_bytes": 134036297
+    },
+    "trips": {
+      "rows": 1957707,
+      "columns": [
+        "trip_id",
+        "started_at",
+        "completed_at",
+        "trip_status",
+        "order_id",
+        "start_location_id",
+        "end_location_id"
+      ],
+      "sha256": "f0fa587eb898b55f2757ca9d7438eae95e52cfb7c76dc83c0bd748fe8364ea1b",
+      "size_bytes": 195900733
+    },
+    "vehicles": {
+      "rows": 110076,
+      "columns": [
+        "vehicle_id",
+        "plate_number",
+        "vehicle_type",
+        "vehicle_status",
+        "driver_partner_id"
+      ],
+      "sha256": "b1c604c66625b5701f0faf3b9a846d3a2b8e965c50c318751126d3ac94c9d32b",
+      "size_bytes": 5454165
+    }
+  }
+}
