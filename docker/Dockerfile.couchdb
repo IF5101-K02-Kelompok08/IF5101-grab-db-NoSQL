@@ -1,6 +1,10 @@
+# CouchDB image for the IF5101 NoSQL project. The version is pinned so the report and every
+# team member use the same DBMS; override with --build-arg COUCHDB_VERSION=... if needed.
+ARG COUCHDB_VERSION=3.5.3
+FROM couchdb:${COUCHDB_VERSION}
 
-FROM couchdb:3
-
+# The .ini is copied into the image instead of bind-mounted, because a mounted file failed
+# to load on Docker Desktop. Files in local.d/ override the defaults.
 COPY --chown=couchdb:couchdb \
     couchdb-single-node.ini \
     /opt/couchdb/etc/local.d/20-single-node.ini

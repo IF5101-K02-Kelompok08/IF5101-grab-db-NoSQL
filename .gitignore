@@ -225,3 +225,4 @@ __marimo__/
 /data/canonical/*.csv
 /benchmarks/results/*
 !/benchmarks/results/.gitkeep
+/data/reference/
