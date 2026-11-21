@@ -1,0 +1,16 @@
+[
+  {
+    "ddoc": "mango-outlets",
+    "name": "open-outlets-by-area",
+    "type": "json",
+    "index": {
+      "fields": [
+        "location.service_area_id",
+        "outlet_status",
+        "outlet_name",
+        "merchant_outlet_id"
+      ]
+    },
+    "comment": "R10 (PF-05): open outlets of one service area, ordered by name, first page only."
+  }
+]
