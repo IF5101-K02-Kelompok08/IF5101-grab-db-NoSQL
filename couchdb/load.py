@@ -115,11 +115,11 @@ def main(argv: list[str] | None = None) -> int:
     settings = get_settings()
     admin = CouchClient.admin(settings, timeout=None)
     info = setup_db.wait_until_up(admin)
-    versions = admin.json('GET', '/_node/_local/_versions')
+    js_engine = setup_db.javascript_engine(admin)
     print(f'[UP] CouchDB {info.get("version")} at {settings.url}', flush=True)
 
     report = {'started_at_utc': datetime.now(UTC).isoformat(), 'couchdb_version': info.get('version'),
-              'javascript_engine': versions.get('javascript_engine'),
+              'javascript_engine': js_engine,
               'data_dir': str(args.data_dir), 'batch_size': args.batch_size,
               'workers': args.workers, 'databases': {}, 'index_builds': []}
     setup_db.ensure_databases(admin, settings, reset=args.reset)

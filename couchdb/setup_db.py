@@ -31,6 +31,20 @@ def wait_until_up(client: CouchClient, timeout: float = 90) -> dict:
             time.sleep(2)
 
 
+def javascript_engine(client: CouchClient):
+    """The JavaScript engine the node runs views with, for reports.
+
+    GET /_node/_local/_versions reports it, but on CouchDB 3.5.3 that endpoint answers 500
+    on a non-distributed node (nonode@nohost, the Docker image default when NODENAME is not
+    set) because it probes the Clouseau search service. The configured engine is used then.
+    """
+    try:
+        return client.json('GET', '/_node/_local/_versions').get('javascript_engine')
+    except CouchError:
+        return {'name': client.json('GET', '/_node/_local/_config/couchdb/js_engine'),
+                'source': 'config'}
+
+
 def ensure_databases(client: CouchClient, settings: Settings, reset: bool = False) -> None:
     for name in DATABASES:
         db = settings.db(name)
@@ -135,6 +149,24 @@ class TaskMonitor(threading.Thread):
         self.stopped.set()
 
 
+def wait_for_index(client: CouchClient, method: str, path: str, **kwargs) -> float:
+    """Send a query that waits for an index build, repeating it until CouchDB answers.
+
+    A query on an index that is still being built waits for the build, but CouchDB gives up
+    after its own request timeout (about 60 s) with "500 timeout" while the build carries on
+    in the background. Sending the query again resumes the wait. Returns the seconds from
+    the first query to the answer, i.e. the build time.
+    """
+    started = time.perf_counter()
+    while True:
+        try:
+            client.request(method, path, timeout=None, **kwargs)
+            return time.perf_counter() - started
+        except CouchError as error:
+            if error.status != 500 or error.error != 'timeout':
+                raise
+
+
 def build_view_index(client: CouchClient, db: str, ddoc: dict) -> dict:
     """Query a design document once so CouchDB builds its index, and time the build.
 
@@ -145,9 +177,7 @@ def build_view_index(client: CouchClient, db: str, ddoc: dict) -> dict:
     params = {'limit': 0}
     if 'reduce' in view:
         params['reduce'] = False
-    started = time.perf_counter()
-    client.request('GET', f'/{db}/{ddoc["_id"]}/_view/{view_name}', params=params, timeout=None)
-    seconds = time.perf_counter() - started
+    seconds = wait_for_index(client, 'GET', f'/{db}/{ddoc["_id"]}/_view/{view_name}', params=params)
     print(f'[BUILD] {db}/{ddoc["_id"]}: {seconds:.1f}s', flush=True)
     return {'database': db, 'design_doc': ddoc['_id'], 'kind': 'javascript views',
             'views': sorted(ddoc['views']), 'build_seconds': round(seconds, 3)}
@@ -156,11 +186,9 @@ def build_view_index(client: CouchClient, db: str, ddoc: dict) -> dict:
 def build_mango_index(client: CouchClient, db: str, index: dict) -> dict:
     """A one-row query with use_index forces a Mango index to be built."""
     fields = index['index']['fields']
-    started = time.perf_counter()
-    client.request('POST', f'/{db}/_find', timeout=None, body={
+    seconds = wait_for_index(client, 'POST', f'/{db}/_find', body={
         'selector': {fields[0]: {'$gt': None}}, 'use_index': [index['ddoc'], index['name']],
         'sort': [{field: 'asc'} for field in fields], 'limit': 1})
-    seconds = time.perf_counter() - started
     print(f'[BUILD] {db}/_design/{index["ddoc"]} (Mango): {seconds:.1f}s', flush=True)
     return {'database': db, 'design_doc': f'_design/{index["ddoc"]}', 'kind': 'mango json index',
             'views': [index['name']], 'build_seconds': round(seconds, 3)}
