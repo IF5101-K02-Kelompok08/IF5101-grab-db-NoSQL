@@ -25,6 +25,7 @@ The repository includes database configurations, a reproducible synthetic datase
 ├── docker/                # DBMS container configurations
 ├── docs/                  # Integration contract and documentation
 ├── memcached/             # Memcached implementation
+├── notebook/              # Notebooks (CouchDB: load, verify and query)
 ├── scripts/               # Dataset generation and verification
 └── tests/                 # Smoke tests and functional tests
 ```
@@ -187,6 +188,12 @@ After verifying the results and experimental conditions, copy the final outputs 
 **Note:** The example adapters use temporary data. They demonstrate the benchmark interface but do not measure performance against the full canonical dataset. The dataset size argument is metadata, not an automatic database loader.
 
 See [Benchmark Methodology](benchmarks/metodologi_benchmark.md) for the full evaluation procedure.
+
+### CouchDB
+
+The CouchDB implementation (loader, design documents, 25 essential operations, load
+verification and benchmark adapter) is described in [couchdb/README.md](couchdb/README.md).
+`notebook/couchdb_queries.ipynb` runs the whole flow and shows the results.
 
 ## 5. Collaboration
 
