@@ -1,3 +1,7 @@
+# Project name, following the Part 2 lab (grab-db-lab-postgres). Without it Compose names
+# everything after this folder: docker-couchdb-1, docker_couchdb_data, ...
+name: grab-db-lab-no_sql
+
 services:
   couchdb:
     build:
