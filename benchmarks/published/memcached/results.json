@@ -1,0 +1,1148 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-11-22T08:18:38.068518+00:00",
+    "dataset_size": 2000000,
+    "warmups": 1,
+    "repeats": 3,
+    "adapters": [
+      "benchmarks.adapters.memcached_kv"
+    ],
+    "timing_scope": "client-observed execute() duration only"
+  },
+  "results": [
+    {
+      "operation_id": "MC-01",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_order",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "order_id": "ORD1997331",
+        "created_at": "2026-10-31 23:56:02+00:00",
+        "order_status": "IN_PROGRESS",
+        "total_amount": 10000.0,
+        "customer_id": "CUS0193289",
+        "trip_id": "TRP1955477",
+        "order_type": "mobility",
+        "ride_type": "GrabBike",
+        "passenger_count": 1,
+        "pickup_notes": null
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.595,
+        0.5819,
+        0.5425
+      ],
+      "mean_ms": 0.573133,
+      "median_ms": 0.5819,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-02",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_order",
+      "scenario": "cache_miss",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": null,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.4842,
+        0.6231,
+        0.6091
+      ],
+      "mean_ms": 0.572133,
+      "median_ms": 0.6091,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-03",
+      "requirement_ids": [
+        "PF-03",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_trip_status",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": "IN_PROGRESS",
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.621,
+        0.5765,
+        1.0373
+      ],
+      "mean_ms": 0.744933,
+      "median_ms": 0.621,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-04",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_order_read_through",
+      "scenario": "cache_miss_fill",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "filled": true,
+        "value": {
+          "order_id": "ORD1997331",
+          "created_at": "2026-10-31 23:56:02+00:00",
+          "order_status": "IN_PROGRESS",
+          "total_amount": 10000.0,
+          "customer_id": "CUS0193289",
+          "trip_id": "TRP1955477",
+          "order_type": "mobility",
+          "ride_type": "GrabBike",
+          "passenger_count": 1,
+          "pickup_notes": null
+        }
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        2.0804,
+        1.0313,
+        1.0491
+      ],
+      "mean_ms": 1.386933,
+      "median_ms": 1.0491,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-05",
+      "requirement_ids": [
+        "PF-03",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "update_trip_status_cas",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": true,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.9446,
+        1.1513,
+        0.8887
+      ],
+      "mean_ms": 0.994867,
+      "median_ms": 0.9446,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-06",
+      "requirement_ids": [
+        "PF-03",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "update_trip_status_cas",
+      "scenario": "cas_conflict",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": false,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.4659,
+        0.8208,
+        0.4604
+      ],
+      "mean_ms": 0.582367,
+      "median_ms": 0.4659,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-07",
+      "requirement_ids": [
+        "PF-02",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "acquire_assignment_lock",
+      "scenario": "add_twice",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        true,
+        false
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        1.1508,
+        0.8442,
+        1.1295
+      ],
+      "mean_ms": 1.0415,
+      "median_ms": 1.1295,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-08",
+      "requirement_ids": [
+        "PF-02",
+        "PF-03",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "accept_assignment",
+      "scenario": "multi_key_update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": true,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        2.9293,
+        2.2798,
+        3.2687
+      ],
+      "mean_ms": 2.825933,
+      "median_ms": 2.9293,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-09",
+      "requirement_ids": [
+        "PF-02",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_driver_availability_batch",
+      "scenario": "get_many_50",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "driver:DRV0000001": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000001\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000002": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000002\",\"vehicle_type\":\"Taxi\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000003": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000003\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"INACTIVE\"}]}",
+        "driver:DRV0000004": "{\"driver_status\":\"INACTIVE\",\"available\":false,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000004\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000005": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000005\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000006": "{\"driver_status\":\"INACTIVE\",\"available\":false,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000006\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000007": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000007\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000008": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1938343\",\"vehicles\":[{\"vehicle_id\":\"VEH0000008\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000009": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000009\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000010": "{\"driver_status\":\"INACTIVE\",\"available\":false,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000010\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"INACTIVE\"}]}",
+        "driver:DRV0000011": "{\"driver_status\":\"INACTIVE\",\"available\":false,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000011\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000012": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000012\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000013": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1943078\",\"vehicles\":[{\"vehicle_id\":\"VEH0000013\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000014": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000014\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"INACTIVE\"}]}",
+        "driver:DRV0000015": "{\"driver_status\":\"INACTIVE\",\"available\":false,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000015\",\"vehicle_type\":\"Electric Car\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000016": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1940226\",\"vehicles\":[{\"vehicle_id\":\"VEH0000016\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000017": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1950999\",\"vehicles\":[{\"vehicle_id\":\"VEH0000017\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000018": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1947214\",\"vehicles\":[{\"vehicle_id\":\"VEH0000018\",\"vehicle_type\":\"Car\",\"vehicle_status\":\"ACTIVE\"},{\"vehicle_id\":\"VEH0000019\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000019": "{\"driver_status\":\"ACTIVE\",\"available\":true,\"current_trip_id\":null,\"vehicles\":[{\"vehicle_id\":\"VEH0000020\",\"vehicle_type\":\"Taxi\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "driver:DRV0000020": "{\"driver_status\":\"ACTIVE\",\"available\":false,\"current_trip_id\":\"TRP1936075\",\"vehicles\":[{\"vehicle_id\":\"VEH0000021\",\"vehicle_type\":\"Motorcycle\",\"vehicle_status\":\"ACTIVE\"}]}",
+        "_truncated_keys": 30
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.796,
+        0.7244,
+        0.7021
+      ],
+      "mean_ms": 0.740833,
+      "median_ms": 0.7244,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-10",
+      "requirement_ids": [
+        "PF-04",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "settle_payment_cas",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": true,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.8522,
+        0.8907,
+        0.9444
+      ],
+      "mean_ms": 0.895767,
+      "median_ms": 0.8907,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-11",
+      "requirement_ids": [
+        "PF-05",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_open_outlets_page",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "page": 1,
+        "pages": 102,
+        "total": 2034,
+        "items": [
+          {
+            "merchant_outlet_id": "OUT0026204",
+            "outlet_name": "Ayam Geprek Adinata",
+            "address": "Jalan Dipatiukur No. 405, Tebet, Jakarta",
+            "latitude": -6.225576,
+            "longitude": 106.842951
+          },
+          {
+            "merchant_outlet_id": "OUT0015214",
+            "outlet_name": "Ayam Geprek Aditya",
+            "address": "Gg. Rajawali Barat No. 6, Tebet, Jakarta",
+            "latitude": -6.21945,
+            "longitude": 106.849519
+          },
+          {
+            "merchant_outlet_id": "OUT0028367",
+            "outlet_name": "Ayam Geprek Alika",
+            "address": "Gg. Bangka Raya No. 660, Tebet, Jakarta",
+            "latitude": -6.213585,
+            "longitude": 106.847641
+          },
+          {
+            "merchant_outlet_id": "OUT0018928",
+            "outlet_name": "Ayam Geprek Ana",
+            "address": "Gang Setiabudhi No. 68, Tebet, Jakarta",
+            "latitude": -6.240448,
+            "longitude": 106.846137
+          },
+          {
+            "merchant_outlet_id": "OUT0013542",
+            "outlet_name": "Ayam Geprek Ani",
+            "address": "Jalan Jamika No. 6, Tebet, Jakarta",
+            "latitude": -6.218772,
+            "longitude": 106.862449
+          },
+          {
+            "merchant_outlet_id": "OUT0058515",
+            "outlet_name": "Ayam Geprek Asirwanda",
+            "address": "Gang PHH. Mustofa No. 0, Tebet, Jakarta",
+            "latitude": -6.227547,
+            "longitude": 106.861106
+          },
+          {
+            "merchant_outlet_id": "OUT0033008",
+            "outlet_name": "Ayam Geprek Bakiono",
+            "address": "Jalan Tebet Barat Dalam No. 12, Tebet, Jakarta",
+            "latitude": -6.225455,
+            "longitude": 106.862971
+          },
+          {
+            "merchant_outlet_id": "OUT0037311",
+            "outlet_name": "Ayam Geprek Bu Alika",
+            "address": "Gg. Dr. Djunjunan No. 479, Tebet, Jakarta",
+            "latitude": -6.215455,
+            "longitude": 106.867397
+          },
+          {
+            "merchant_outlet_id": "OUT0022527",
+            "outlet_name": "Ayam Geprek Bu Amalia",
+            "address": "Gang Tubagus Ismail No. 4, Tebet, Jakarta",
+            "latitude": -6.21938,
+            "longitude": 106.848074
+          },
+          {
+            "merchant_outlet_id": "OUT0001729",
+            "outlet_name": "Ayam Geprek Bu Ani",
+            "address": "Gg. PHH. Mustofa No. 088, Tebet, Jakarta",
+            "latitude": -6.218512,
+            "longitude": 106.857043
+          },
+          {
+            "merchant_outlet_id": "OUT0056604",
+            "outlet_name": "Ayam Geprek Bu Ani",
+            "address": "Jalan HOS. Cokroaminoto No. 438, Tebet, Jakarta",
+            "latitude": -6.234231,
+            "longitude": 106.83817
+          },
+          {
+            "merchant_outlet_id": "OUT0049910",
+            "outlet_name": "Ayam Geprek Bu Aurora",
+            "address": "Jl. Waringin No. 1, Tebet, Jakarta",
+            "latitude": -6.237531,
+            "longitude": 106.843242
+          },
+          {
+            "merchant_outlet_id": "OUT0054168",
+            "outlet_name": "Ayam Geprek Bu Aurora",
+            "address": "Gg. Ahmad Dahlan No. 5, Tebet, Jakarta",
+            "latitude": -6.240521,
+            "longitude": 106.856446
+          },
+          {
+            "merchant_outlet_id": "OUT0045564",
+            "outlet_name": "Ayam Geprek Bu Cici",
+            "address": "Jl. W.R. Supratman No. 07, Tebet, Jakarta",
+            "latitude": -6.220751,
+            "longitude": 106.866169
+          },
+          {
+            "merchant_outlet_id": "OUT0014070",
+            "outlet_name": "Ayam Geprek Bu Cindy",
+            "address": "Gang Cihampelas No. 45, Tebet, Jakarta",
+            "latitude": -6.218329,
+            "longitude": 106.856938
+          },
+          {
+            "merchant_outlet_id": "OUT0004413",
+            "outlet_name": "Ayam Geprek Bu Citra",
+            "address": "Gg. Jamika No. 53, Tebet, Jakarta",
+            "latitude": -6.235619,
+            "longitude": 106.8662
+          },
+          {
+            "merchant_outlet_id": "OUT0007630",
+            "outlet_name": "Ayam Geprek Bu Diah",
+            "address": "Jalan Waringin No. 3, Tebet, Jakarta",
+            "latitude": -6.219345,
+            "longitude": 106.841624
+          },
+          {
+            "merchant_outlet_id": "OUT0009208",
+            "outlet_name": "Ayam Geprek Bu Dina",
+            "address": "Gang Erlangga No. 335, Tebet, Jakarta",
+            "latitude": -6.230617,
+            "longitude": 106.838735
+          },
+          {
+            "merchant_outlet_id": "OUT0036479",
+            "outlet_name": "Ayam Geprek Bu Dina",
+            "address": "Jalan KH Amin Jasuta No. 4, Tebet, Jakarta",
+            "latitude": -6.225296,
+            "longitude": 106.865558
+          },
+          {
+            "merchant_outlet_id": "OUT0030405",
+            "outlet_name": "Ayam Geprek Bu Eka",
+            "address": "Jl. Antapani Lama No. 40, Tebet, Jakarta",
+            "latitude": -6.237961,
+            "longitude": 106.850183
+          }
+        ]
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.8966,
+        0.6137,
+        0.527
+      ],
+      "mean_ms": 0.6791,
+      "median_ms": 0.6137,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-12",
+      "requirement_ids": [
+        "PF-06",
+        "PF-07",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "invalidate_area_outlets",
+      "scenario": "delete_many",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": true,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.3803,
+        0.4546,
+        0.5218
+      ],
+      "mean_ms": 0.452233,
+      "median_ms": 0.4546,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-13",
+      "requirement_ids": [
+        "PF-01"
+      ],
+      "dbms": "memcached",
+      "operation": "create_order_trip",
+      "scenario": "set_many_3",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.6294,
+        0.5527,
+        0.9644
+      ],
+      "mean_ms": 0.7155,
+      "median_ms": 0.6294,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-14",
+      "requirement_ids": [
+        "PF-08",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_driver_stats",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "total_accepted": 52.0,
+        "total_rejected": 16.0,
+        "total_expired": 11.0,
+        "acceptance_rate_percentage": 76.47,
+        "total_completed_trips": 51.0,
+        "total_duration_minutes": 1376.9,
+        "avg_duration_per_trip_minutes": 27.0
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.5666,
+        0.5666,
+        0.5548
+      ],
+      "mean_ms": 0.562667,
+      "median_ms": 0.5666,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-15",
+      "requirement_ids": [
+        "PF-10",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_report_monthly_payments",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148263,
+          "paid": 125607,
+          "refunded": 18237,
+          "failed": 4419,
+          "pending": 0,
+          "paid_pct": 84.72,
+          "net_revenue": 5902812500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "CASH",
+          "total_payments": 99650,
+          "paid": 88169,
+          "refunded": 0,
+          "failed": 11481,
+          "pending": 0,
+          "paid_pct": 88.48,
+          "net_revenue": 4135309000.0,
+          "avg_settle_minutes": 33.9
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49245,
+          "paid": 41693,
+          "refunded": 6062,
+          "failed": 1490,
+          "pending": 0,
+          "paid_pct": 84.66,
+          "net_revenue": 1959677000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "CARD",
+          "total_payments": 33059,
+          "paid": 28002,
+          "refunded": 4021,
+          "failed": 1036,
+          "pending": 0,
+          "paid_pct": 84.7,
+          "net_revenue": 1318878500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 143706,
+          "paid": 121622,
+          "refunded": 17843,
+          "failed": 4241,
+          "pending": 0,
+          "paid_pct": 84.63,
+          "net_revenue": 5713361500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "CASH",
+          "total_payments": 96206,
+          "paid": 85161,
+          "refunded": 0,
+          "failed": 11045,
+          "pending": 0,
+          "paid_pct": 88.52,
+          "net_revenue": 3997149000.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 48010,
+          "paid": 40521,
+          "refunded": 6058,
+          "failed": 1431,
+          "pending": 0,
+          "paid_pct": 84.4,
+          "net_revenue": 1896077500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "CARD",
+          "total_payments": 31644,
+          "paid": 26778,
+          "refunded": 3906,
+          "failed": 960,
+          "pending": 0,
+          "paid_pct": 84.62,
+          "net_revenue": 1265779000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148609,
+          "paid": 125555,
+          "refunded": 18531,
+          "failed": 4523,
+          "pending": 0,
+          "paid_pct": 84.49,
+          "net_revenue": 5905312500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "CASH",
+          "total_payments": 98978,
+          "paid": 87737,
+          "refunded": 0,
+          "failed": 11241,
+          "pending": 0,
+          "paid_pct": 88.64,
+          "net_revenue": 4118625000.0,
+          "avg_settle_minutes": 33.9
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49816,
+          "paid": 42234,
+          "refunded": 6142,
+          "failed": 1440,
+          "pending": 0,
+          "paid_pct": 84.78,
+          "net_revenue": 1990816500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "CARD",
+          "total_payments": 32813,
+          "paid": 27695,
+          "refunded": 4142,
+          "failed": 976,
+          "pending": 0,
+          "paid_pct": 84.4,
+          "net_revenue": 1296553500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148633,
+          "paid": 125508,
+          "refunded": 18697,
+          "failed": 4428,
+          "pending": 0,
+          "paid_pct": 84.44,
+          "net_revenue": 5908093500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "CASH",
+          "total_payments": 99276,
+          "paid": 87705,
+          "refunded": 0,
+          "failed": 11571,
+          "pending": 0,
+          "paid_pct": 88.34,
+          "net_revenue": 4142070000.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49481,
+          "paid": 41974,
+          "refunded": 6022,
+          "failed": 1485,
+          "pending": 0,
+          "paid_pct": 84.83,
+          "net_revenue": 1973830000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "CARD",
+          "total_payments": 32828,
+          "paid": 27758,
+          "refunded": 4083,
+          "failed": 987,
+          "pending": 0,
+          "paid_pct": 84.56,
+          "net_revenue": 1300943500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 143403,
+          "paid": 121311,
+          "refunded": 17841,
+          "failed": 4251,
+          "pending": 0,
+          "paid_pct": 84.59,
+          "net_revenue": 5702520000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "CASH",
+          "total_payments": 96091,
+          "paid": 84835,
+          "refunded": 0,
+          "failed": 11256,
+          "pending": 0,
+          "paid_pct": 88.29,
+          "net_revenue": 3993797500.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 48107,
+          "paid": 40731,
+          "refunded": 5947,
+          "failed": 1429,
+          "pending": 0,
+          "paid_pct": 84.67,
+          "net_revenue": 1922696000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "CARD",
+          "total_payments": 31965,
+          "paid": 26927,
+          "refunded": 4038,
+          "failed": 1000,
+          "pending": 0,
+          "paid_pct": 84.24,
+          "net_revenue": 1258310000.0,
+          "avg_settle_minutes": 0.5
+        },
+        "<and 6 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.5767,
+        0.5423,
+        0.5028
+      ],
+      "mean_ms": 0.5406,
+      "median_ms": 0.5423,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-16",
+      "requirement_ids": [
+        "PF-08",
+        "PNF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_report_acceptance_rate",
+      "scenario": "cache_hit",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "row_count": 99752,
+        "top": [
+          {
+            "driver_partner_id": "DRV0071552",
+            "full_name": "Padma Laksita",
+            "total_accepted": 28,
+            "total_rejected": 0,
+            "total_expired": 4,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0068730",
+            "full_name": "Jamal Sihotang",
+            "total_accepted": 25,
+            "total_rejected": 0,
+            "total_expired": 7,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0099370",
+            "full_name": "Cahyanto Winarno",
+            "total_accepted": 24,
+            "total_rejected": 0,
+            "total_expired": 7,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0016513",
+            "full_name": "Pranata Puspita",
+            "total_accepted": 23,
+            "total_rejected": 0,
+            "total_expired": 4,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0057417",
+            "full_name": "Hari Ardianto",
+            "total_accepted": 23,
+            "total_rejected": 0,
+            "total_expired": 2,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0097726",
+            "full_name": "Cawisono Pratiwi",
+            "total_accepted": 22,
+            "total_rejected": 0,
+            "total_expired": 2,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0021404",
+            "full_name": "Rini Hariyah",
+            "total_accepted": 20,
+            "total_rejected": 0,
+            "total_expired": 1,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0038178",
+            "full_name": "Karsana Kuswandari",
+            "total_accepted": 20,
+            "total_rejected": 0,
+            "total_expired": 7,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0011301",
+            "full_name": "Manah Natsir",
+            "total_accepted": 19,
+            "total_rejected": 0,
+            "total_expired": 8,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0014054",
+            "full_name": "Perkasa Saragih",
+            "total_accepted": 19,
+            "total_rejected": 0,
+            "total_expired": 5,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0020717",
+            "full_name": "Amelia Maryati",
+            "total_accepted": 19,
+            "total_rejected": 0,
+            "total_expired": 8,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0072902",
+            "full_name": "Cager Permata",
+            "total_accepted": 19,
+            "total_rejected": 0,
+            "total_expired": 5,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0084207",
+            "full_name": "Latif Dabukke",
+            "total_accepted": 18,
+            "total_rejected": 0,
+            "total_expired": 1,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0005370",
+            "full_name": "Ella Waskita",
+            "total_accepted": 17,
+            "total_rejected": 0,
+            "total_expired": 1,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0018729",
+            "full_name": "Shania Purwanti",
+            "total_accepted": 17,
+            "total_rejected": 0,
+            "total_expired": 1,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0021418",
+            "full_name": "Puput Sihombing",
+            "total_accepted": 17,
+            "total_rejected": 0,
+            "total_expired": 1,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0079234",
+            "full_name": "Dariati Yuniar",
+            "total_accepted": 17,
+            "total_rejected": 0,
+            "total_expired": 7,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0003494",
+            "full_name": "Tugiman Prasetya",
+            "total_accepted": 16,
+            "total_rejected": 0,
+            "total_expired": 2,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0011285",
+            "full_name": "Jamil Mandala",
+            "total_accepted": 16,
+            "total_rejected": 0,
+            "total_expired": 3,
+            "acceptance_rate_percentage": 100.0
+          },
+          {
+            "driver_partner_id": "DRV0030992",
+            "full_name": "Cahya Megantara",
+            "total_accepted": 16,
+            "total_rejected": 0,
+            "total_expired": 3,
+            "acceptance_rate_percentage": 100.0
+          },
+          "<and 80 more items>"
+        ]
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.7751,
+        1.13,
+        0.861
+      ],
+      "mean_ms": 0.922033,
+      "median_ms": 0.861,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-17",
+      "requirement_ids": [
+        "PF-09",
+        "PNF-04"
+      ],
+      "dbms": "memcached",
+      "operation": "incr_area_trip_counter",
+      "scenario": "incr",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": 101,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        0.5426,
+        0.6676,
+        2.3974
+      ],
+      "mean_ms": 1.202533,
+      "median_ms": 0.6676,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "MC-18",
+      "requirement_ids": [
+        "PNF-07",
+        "PF-03"
+      ],
+      "dbms": "memcached",
+      "operation": "get_after_ttl",
+      "scenario": "expired",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": null,
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        3.1212,
+        2.8894,
+        2.9782
+      ],
+      "mean_ms": 2.996267,
+      "median_ms": 2.9782,
+      "status": "passed",
+      "errors": []
+    }
+  ]
+}

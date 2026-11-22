@@ -1,0 +1,56 @@
+{
+  "counts": {
+    "area": {
+      "expected": 23,
+      "found": 23
+    },
+    "driver": {
+      "expected": 100000,
+      "found": 100000
+    },
+    "order": {
+      "expected": 50652,
+      "found": 46793
+    },
+    "payment": {
+      "expected": 50652,
+      "found": 50652
+    },
+    "trip": {
+      "expected": 49200,
+      "found": 37066
+    },
+    "report": {
+      "expected": 9,
+      "found": 9
+    }
+  },
+  "sample_field_check": {
+    "checked": 4000,
+    "mismatches": 317,
+    "examples": [
+      "ORD1956529",
+      "ORD1950129",
+      "ORD1959453",
+      "ORD1953578",
+      "ORD1957170"
+    ]
+  },
+  "r10_tebet_page1": {
+    "service_area_id": "SAR0000007",
+    "expected_ids": [
+      "OUT0026204",
+      "OUT0015214",
+      "OUT0028367"
+    ],
+    "match": true,
+    "total_open_outlets": 2034,
+    "pages": 102
+  },
+  "report_consistency": {
+    "r5_sum_trips": 1957707,
+    "trips_rows": 1957707,
+    "r2_rows": 10
+  },
+  "passed": false
+}

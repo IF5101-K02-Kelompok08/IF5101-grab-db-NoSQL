@@ -17,7 +17,7 @@ services:
 
   memcached:
     image: memcached:1.6
-    command: ["-m", "128", "-I", "2m"]
+    command: ["-m", "256", "-I", "2m"]
     ports:
       - "127.0.0.1:11211:11211"
 

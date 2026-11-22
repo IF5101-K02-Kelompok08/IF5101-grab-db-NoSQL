@@ -1,0 +1,11 @@
+{
+  "requests": 20000,
+  "hot_share": 0.8,
+  "server_get_hits": 17338,
+  "server_get_misses": 2662,
+  "hit_rate": 0.8669,
+  "miss_rate": 0.1331,
+  "read_through_fills": 2662,
+  "mean_hit_ms": 0.4689,
+  "mean_miss_ms": 0.4749
+}

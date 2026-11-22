@@ -1,0 +1,72 @@
+{
+  "ttl_mode": "policy",
+  "hot_window_hours": 24,
+  "total_seconds": 277.21,
+  "keys": 352753,
+  "payload_bytes": 95200474,
+  "families": {
+    "area": {
+      "keys": 23,
+      "bytes": 2242,
+      "max_bytes": 104,
+      "ttl_s": 86400
+    },
+    "outlets_page": {
+      "keys": 2196,
+      "bytes": 7520037,
+      "max_bytes": 3703,
+      "ttl_s": 600
+    },
+    "driver": {
+      "keys": 100000,
+      "bytes": 17064151,
+      "max_bytes": 274,
+      "ttl_s": 120
+    },
+    "driver_stats": {
+      "keys": 100000,
+      "bytes": 19753435,
+      "max_bytes": 201,
+      "ttl_s": 86400
+    },
+    "report": {
+      "keys": 9,
+      "bytes": 63691,
+      "max_bytes": 15728,
+      "ttl_s": 3600
+    },
+    "order": {
+      "keys": 50652,
+      "bytes": 14515307,
+      "max_bytes": 333,
+      "ttl_s": 3600
+    },
+    "payment": {
+      "keys": 50652,
+      "bytes": 6543810,
+      "max_bytes": 139,
+      "ttl_s": 3600
+    },
+    "trip": {
+      "keys": 49200,
+      "bytes": 29737717,
+      "max_bytes": 1261,
+      "ttl_s": 900
+    },
+    "counter": {
+      "keys": 21,
+      "bytes": 84,
+      "max_bytes": 4,
+      "ttl_s": 172800
+    }
+  },
+  "memcached": {
+    "version": "1.6.45",
+    "curr_items": 287355,
+    "bytes": 107142134,
+    "limit_maxbytes": 268435456,
+    "evictions": 0,
+    "total_items": 705506,
+    "curr_connections": 2
+  }
+}
