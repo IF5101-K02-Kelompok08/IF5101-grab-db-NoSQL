@@ -1,0 +1,58 @@
+{
+  "run_started_utc": "2026-11-21T23:08:11.612010+00:00",
+  "git_commit": "51e8a45c289ef5b12d4a0c40413c48b3f6efac66",
+  "git_branch": "def/feat/coachdb",
+  "git_uncommitted_changes": [
+    "M docker/compose.yaml"
+  ],
+  "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "cpu": "Apple M5",
+  "cpu_cores": 10,
+  "ram_gb": 16.0,
+  "python": "3.14.6",
+  "packages": {
+    "requests": "2.34.2",
+    "pandas": "3.1.1",
+    "pytest": "9.2.0"
+  },
+  "docker": "29.5.3",
+  "docker_resources": "cpus=10 memory_bytes=8321515520",
+  "couchdb_version": "3.5.3",
+  "couchdb_features": [
+    "quickjs",
+    "access-ready",
+    "partitioned",
+    "pluggable-storage-engines",
+    "reshard",
+    "scheduler"
+  ],
+  "javascript_engine": {
+    "name": "quickjs",
+    "source": "config"
+  },
+  "couchdb_url": "http://127.0.0.1:5984",
+  "app_user": "grab_app",
+  "dataset": "/Users/m.nabil/Documents/CODE/IF5101-grab-db-NoSQL/data/canonical",
+  "dataset_orders": 2000000,
+  "dataset_sha256": {
+    "customers": "da9bed8140400949856ffdd963f0e51a95394821c01915ea233eb6be10bb9ba6",
+    "delivery_orders": "b52b781b117e4a686c61fcdb44db8916b524d15dfca5caddb30bbe9607cddaf8",
+    "driver_assignments": "f63de13fc670e955a9c197da7d03d75810ff3900f0ab1309d6ef27ec7b91b0e2",
+    "driver_partners": "dc272958e65e78c9d905093e2a5f622fdfc197dde6cb136df66838c106693ffb",
+    "food_orders": "0befdb40239347e01c1a030afcea94570e5bc67c144665b885c6e27f5aef9639",
+    "locations": "812a7f361e5d05a47289d82157c76298c9f9a6974e9c500e94ad984fdc6dc132",
+    "merchant_outlets": "6b8b83c14f1e503f7f802d6b8e564353a2c39629e8e866666fc83c001541b1df",
+    "mobility_orders": "cab29a042a80438bbf2e4fd17d5fb99ef4baaba032591ce943136327ef766b28",
+    "payments": "4b6b81acc6aeab9f6bc8916d856f84a1e968538455bcf98fd7e1613aebdb4a93",
+    "service_areas": "51ce6d0835f7015d87d6b358fff2decba86c085af4ff2ae0a112cc5acb0b8b93",
+    "service_orders": "ac55d94b91ef5df61acc07acc1ba3c2725318cd235eefa2751d3f83b3f80150e",
+    "trips": "f0fa587eb898b55f2757ca9d7438eae95e52cfb7c76dc83c0bd748fe8364ea1b",
+    "vehicles": "b1c604c66625b5701f0faf3b9a846d3a2b8e965c50c318751126d3ac94c9d32b"
+  },
+  "parameters": {
+    "RUN_LOAD": false,
+    "RUN_BENCHMARK": false,
+    "RUN_TESTS": true
+  },
+  "run_finished_utc": "2026-11-21T23:09:17.130154+00:00"
+}

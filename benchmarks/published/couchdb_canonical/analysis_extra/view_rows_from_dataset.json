@@ -1,0 +1,54 @@
+{
+ "PF-08-Q01": {
+  "view_rows": 200000,
+  "detail": "100,000 grup driver_decisions + 100,000 baris driver_names"
+ },
+ "PF-08-Q02": {
+  "view_rows": 100001,
+  "detail": "99,991 grup driver_completed_duration + 10 dokumen driver"
+ },
+ "PF-08-Q03": {
+  "view_rows": 110065,
+  "detail": "110,065 grup vehicle_hourly_usage (satu per kendaraan)"
+ },
+ "PF-02-Q04": {
+  "view_rows": 260024,
+  "detail": "260,024 baris trip_attempts"
+ },
+ "PF-10-Q03": {
+  "view_rows": 60013,
+  "detail": "59,993 grup food_revenue_by_outlet + 10 outlet + area"
+ },
+ "PF-09-Q02": {
+  "view_rows": 799,
+  "detail": "65 grup outlet + 711 grup hari\u00d7area + 23 area"
+ },
+ "PF-10-Q02": {
+  "view_rows": 28,
+  "detail": "grup bulan\u00d7metode"
+ },
+ "PF-10-Q01": {
+  "view_rows": 46,
+  "detail": "23 grup area + 23 dokumen area"
+ },
+ "PF-09-Q01": {
+  "view_rows": 46,
+  "detail": "23 grup area + 23 dokumen area"
+ },
+ "PF-05-Q01": {
+  "view_rows": 21,
+  "detail": "1 baris area + 20 dokumen outlet (Mango)"
+ },
+ "PF-01-Q01": {
+  "view_rows": 1,
+  "detail": "1 dokumen order"
+ },
+ "PF-01-Q02": {
+  "view_rows": 20,
+  "detail": "20 baris by_customer"
+ },
+ "PF-03-Q01": {
+  "view_rows": 1,
+  "detail": "1 baris by_trip"
+ }
+}

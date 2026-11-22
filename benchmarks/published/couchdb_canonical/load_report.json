@@ -1,0 +1,179 @@
+{
+  "started_at_utc": "2026-11-21T22:31:30.883165+00:00",
+  "couchdb_version": "3.5.3",
+  "javascript_engine": {
+    "name": "quickjs",
+    "source": "config"
+  },
+  "data_dir": "/Users/m.nabil/Documents/CODE/IF5101-grab-db-NoSQL/data/canonical",
+  "batch_size": 2000,
+  "workers": 4,
+  "databases": {
+    "grab_geo": {
+      "documents_written": 460023,
+      "documents_failed": 0,
+      "load_seconds": 45.349,
+      "docs_per_second": 10144.1
+    },
+    "grab_customers": {
+      "documents_written": 200000,
+      "documents_failed": 0,
+      "load_seconds": 20.005,
+      "docs_per_second": 9997.6
+    },
+    "grab_fleet": {
+      "documents_written": 100000,
+      "documents_failed": 0,
+      "load_seconds": 10.762,
+      "docs_per_second": 9292.0
+    },
+    "grab_orders": {
+      "documents_written": 2000000,
+      "documents_failed": 0,
+      "load_seconds": 243.953,
+      "docs_per_second": 8198.3
+    }
+  },
+  "index_builds": [
+    {
+      "database": "grab_orders",
+      "design_doc": "_design/analytics",
+      "kind": "javascript views",
+      "views": [
+        "driver_completed_duration",
+        "driver_decisions",
+        "entity_counts",
+        "food_orders_by_day_area",
+        "food_revenue_by_outlet",
+        "payments_by_month_method",
+        "settled_payments_by_area",
+        "trip_attempts",
+        "trips_by_start_area",
+        "vehicle_hourly_usage"
+      ],
+      "build_seconds": 751.512
+    },
+    {
+      "database": "grab_orders",
+      "design_doc": "_design/ops",
+      "kind": "javascript views",
+      "views": [
+        "by_customer",
+        "by_trip",
+        "food_by_outlet"
+      ],
+      "build_seconds": 337.321
+    },
+    {
+      "database": "grab_fleet",
+      "design_doc": "_design/fleet",
+      "kind": "javascript views",
+      "views": [
+        "available_vehicles",
+        "driver_names",
+        "entity_counts",
+        "vehicles_by_id"
+      ],
+      "build_seconds": 10.189
+    },
+    {
+      "database": "grab_customers",
+      "design_doc": "_design/customers",
+      "kind": "javascript views",
+      "views": [
+        "entity_counts"
+      ],
+      "build_seconds": 15.03
+    },
+    {
+      "database": "grab_geo",
+      "design_doc": "_design/geo",
+      "kind": "javascript views",
+      "views": [
+        "areas_by_city_name",
+        "entity_counts",
+        "locations_by_area",
+        "outlets_by_area_status"
+      ],
+      "build_seconds": 35.723
+    },
+    {
+      "database": "grab_geo",
+      "design_doc": "_design/mango-outlets",
+      "kind": "mango json index",
+      "views": [
+        "open-outlets-by-area"
+      ],
+      "build_seconds": 27.556
+    }
+  ],
+  "lookup_seconds": 0.916,
+  "load_seconds_total": 320.075,
+  "index_build_seconds_total": 1177.507,
+  "view_index_sizes": {
+    "grab_orders/_design/analytics": {
+      "file": 1400084280,
+      "external": 786466746,
+      "active": 596216781
+    },
+    "grab_orders/_design/ops": {
+      "file": 1015824904,
+      "external": 653505631,
+      "active": 377565303
+    },
+    "grab_fleet/_design/fleet": {
+      "file": 15164004,
+      "external": 29729238,
+      "active": 14966482
+    },
+    "grab_customers/_design/customers": {
+      "file": 3055952,
+      "external": 3627905,
+      "active": 3003265
+    },
+    "grab_geo/_design/geo": {
+      "file": 15020678,
+      "external": 20836531,
+      "active": 14245811
+    }
+  },
+  "database_sizes": {
+    "grab_orders": {
+      "doc_count": 2000003,
+      "doc_del_count": 0,
+      "sizes": {
+        "file": 1842205100,
+        "external": 2259764295,
+        "active": 1831594244
+      }
+    },
+    "grab_fleet": {
+      "doc_count": 100002,
+      "doc_del_count": 0,
+      "sizes": {
+        "file": 44331430,
+        "external": 31881685,
+        "active": 43935079
+      }
+    },
+    "grab_customers": {
+      "doc_count": 200002,
+      "doc_del_count": 0,
+      "sizes": {
+        "file": 60453286,
+        "external": 28354125,
+        "active": 59602243
+      }
+    },
+    "grab_geo": {
+      "doc_count": 460026,
+      "doc_del_count": 0,
+      "sizes": {
+        "file": 160981420,
+        "external": 83052241,
+        "active": 158997046
+      }
+    }
+  },
+  "finished_at_utc": "2026-11-21T22:56:30.254004+00:00"
+}

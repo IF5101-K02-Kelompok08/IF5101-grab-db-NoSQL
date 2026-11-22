@@ -1,0 +1,35 @@
+{
+  "benchmark_summary.csv": {
+    "bytes": 2103,
+    "sha256": "fdfec707ae99f8a3d39bb597984bc77c0660aa05502053fc083ffb314a522c22"
+  },
+  "environment.json": {
+    "bytes": 2274,
+    "sha256": "313ab9afd9faa24f22b1937314acbd67740e9e644bd525f6f83840ae3ba91a00"
+  },
+  "operations_once.csv": {
+    "bytes": 2493,
+    "sha256": "75cebb86546095c660fe8f8ecbb8be6a0726b09ee601d6773752d3f64a54cec1"
+  },
+  "results.json": {
+    "bytes": 73987,
+    "sha256": "732c3026940016d760b599083d0e90c9dd23fa19bc602748c339c21ead98b6cc"
+  },
+  "runs.csv": {
+    "bytes": 4692,
+    "sha256": "3ebe1318fc8390462fd4796f7b235e9cc7bf8f1f86956bf417f5cff31155f064"
+  },
+  "tests.txt": {
+    "bytes": 3208,
+    "sha256": "d53b64b45a79fd409b905bc4506ac476c49baf5838db2dad4cf520c57887aba3"
+  },
+  "verify_report.json": {
+    "bytes": 2707,
+    "sha256": "cc0967000f36e00119188d3b72e722372ba40ee5544a83410f172694d2461641"
+  },
+  "couchdb_reference_canonical.json": {
+    "bytes": 63569102,
+    "sha256": "2923c5d47736664dba4883354a2b596daed4fdeb4b6949d9ccd8aa02b5b81f60",
+    "note": "expected results, kept in data/reference (not published)"
+  }
+}

@@ -1,0 +1,6 @@
+- Dataset `canonical`: 2,000,000 order, CouchDB 3.5.3, commit `51e8a45`.
+- Hasil benar: 25/25 operasi; dalam target: 20/25.
+- Tercepat: PF-03-Q01 2.6 ms, PF-01-Q01 2.9 ms, PF-01-Q02 3.0 ms.
+- Terlambat: PF-08-Q01 12,842.1 ms, PF-08-Q03 10,458.3 ms, PF-08-Q02 5,891.9 ms.
+- Melewati target: PF-08-Q01 (R1) 6.5× target, PF-08-Q03 (R3) 5.28× target, PF-08-Q02 (R2) 2.98× target, PF-02-Q04 (R4) 2.27× target, PF-10-Q03 (R8) 1.34× target.
+- Pemuatan 320 s, build indeks 1,178 s.

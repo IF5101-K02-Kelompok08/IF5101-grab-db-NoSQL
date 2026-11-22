@@ -1,0 +1,26 @@
+operation_id,part2,operasi,kategori,rata2_ms,median_ms,terlambat_ms,hasil_benar,target_ms,rasio_thd_target,lulus_target
+PF-01-Q01,,"Read one order with its subtype, payment, trips and assignments",Operasional,2.923528,2.413,4.002167,True,100,0.04,True
+PF-01-Q02,,Read a customer's 20 latest orders,Operasional,2.982083,2.554208,3.872375,True,100,0.04,True
+PF-01-Q03,W1,Create a confirmed order with its payment and SEARCHING trip,Transaksional,10.499973,10.337667,11.286459,True,200,0.06,True
+PF-02-Q01,W2,Offer a trip to an available driver,Transaksional,10.071375,10.228667,10.253416,True,200,0.05,True
+PF-02-Q02,W3,Driver accepts the offer and starts the trip,Transaksional,15.260986,14.09225,17.738667,True,200,0.09,True
+PF-02-Q03,W4,Driver rejects the offer,Transaksional,8.249264,8.156958,8.496875,True,200,0.04,True
+PF-02-Q04,R4,Trips offered more than twice and eventually accepted,Analitik,4461.570694,4465.874125,4546.462667,True,2000,2.27,False
+PF-03-Q01,,Read the status of a trip by trip_id,Operasional,2.565764,2.440208,3.068708,True,100,0.03,True
+PF-03-Q02,W5,Complete a trip and make the driver available,Transaksional,19.502625,20.765458,21.828875,True,200,0.11,True
+PF-04-Q01,W7,Non-cash checkout that fails once and succeeds on retry,Transaksional,27.372847,27.140166,27.868417,True,200,0.14,True
+PF-04-Q02,W8,Cancel before pickup and settle the payment,Transaksional,8.272763,7.856583,9.354791,True,200,0.05,True
+PF-04-Q03,W9,Complete a cash ride and collect the payment atomically,Transaksional,8.270639,8.273375,8.328917,True,200,0.04,True
+PF-05-Q01,R10,First page of open outlets in a service area,Operasional,10.161931,10.602667,10.643167,True,100,0.11,True
+PF-06-Q01,W6,Onboard a service area with its locations and outlets,Transaksional,18.873667,18.115125,20.424,True,200,0.1,True
+PF-06-Q02,W10,Deactivate a service area and delist its outlets,Transaksional,38.006778,37.174083,42.958,True,200,0.21,True
+PF-07-Q01,,Delete a delisted outlet that no order refers to,Transaksional,10.453945,10.368708,10.868334,True,200,0.05,True
+PF-07-Q02,,Refuse to delete an outlet that orders still refer to,Transaksional,17.709625,14.715209,24.605125,True,200,0.12,True
+PF-08-Q01,R1,Acceptance rate per driver,Analitik,12842.064361,12801.135375,12998.063375,True,2000,6.5,False
+PF-08-Q02,R2,Top 10 drivers by total completed trip duration,Analitik,5891.931875,5866.944542,5952.719958,True,2000,2.98,False
+PF-08-Q03,R3,Trips and distinct vehicles per vehicle type and hour,Analitik,10458.348653,10484.309167,10551.344709,True,2000,5.28,False
+PF-09-Q01,R5,Trips per service area,Analitik,39.103375,38.771709,39.896167,True,2000,0.02,True
+PF-09-Q02,R9,"Outlet supply against food demand per area, October 2026",Analitik,310.801014,310.369708,311.976333,True,2000,0.16,True
+PF-10-Q01,R6,Net revenue and refunds per service area,Analitik,47.04,46.821625,47.485958,True,2000,0.02,True
+PF-10-Q02,R7,Monthly payment summary per payment method,Analitik,60.109333,59.192833,62.07125,True,2000,0.03,True
+PF-10-Q03,R8,Top 10 outlets by food revenue,Analitik,2661.271056,2652.691917,2679.5085,True,2000,1.34,False

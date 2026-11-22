@@ -1,0 +1,2657 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-11-21T23:05:03.015860+00:00",
+    "dataset_size": 2000000,
+    "warmups": 1,
+    "repeats": 3,
+    "adapters": [
+      "benchmarks.adapters.couchdb"
+    ],
+    "timing_scope": "client-observed execute() duration only"
+  },
+  "results": [
+    {
+      "operation_id": "PF-01-Q01",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-03"
+      ],
+      "dbms": "couchdb",
+      "operation": "get_order",
+      "scenario": "read",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "_id": "ORD0000001",
+        "_rev": "1-2e3e6964651c2ec607658abb4f7058b8",
+        "type": "service_order",
+        "order_id": "ORD0000001",
+        "customer_id": "CUS0097257",
+        "created_at": "2026-05-01T00:00:02Z",
+        "order_status": "CANCELLED",
+        "total_amount": 29000.0,
+        "service_type": "MOBILITY",
+        "mobility": {
+          "ride_type": "GrabCar",
+          "passenger_count": 2,
+          "pickup_notes": null
+        },
+        "payment": {
+          "payment_id": "PAY0000001",
+          "payment_method": "E_WALLET",
+          "payment_status": "REFUNDED",
+          "amount": 29000.0,
+          "paid_at": "2026-05-01T00:00:16Z"
+        },
+        "trips": [
+          {
+            "trip_id": "TRP0000001",
+            "trip_status": "CANCELLED",
+            "started_at": null,
+            "completed_at": null,
+            "start_location_id": "LOC0064615",
+            "end_location_id": "LOC0223735",
+            "start_service_area_id": "SAR0000016",
+            "assignments": [
+              {
+                "assignment_id": "ASN0000001",
+                "assignment_status": "REJECTED",
+                "assigned_at": "2026-05-01T00:00:20Z",
+                "responded_at": "2026-05-01T00:00:29Z",
+                "ended_at": "2026-05-01T00:00:29Z",
+                "end_reason": "Pickup too far",
+                "vehicle_id": "VEH0017631",
+                "driver_partner_id": "DRV0015971",
+                "vehicle_type": "Car"
+              },
+              {
+                "assignment_id": "ASN0000002",
+                "assignment_status": "CANCELLED",
+                "assigned_at": "2026-05-01T00:00:32Z",
+                "responded_at": "2026-05-01T00:00:36Z",
+                "ended_at": "2026-05-01T00:03:12Z",
+                "end_reason": "Cancelled by driver",
+                "vehicle_id": "VEH0015263",
+                "driver_partner_id": "DRV0013805",
+                "vehicle_type": "Car"
+              }
+            ]
+          }
+        ]
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        4.002167,
+        2.413,
+        2.355417
+      ],
+      "mean_ms": 2.923528,
+      "median_ms": 2.413,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-01-Q02",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-03"
+      ],
+      "dbms": "couchdb",
+      "operation": "customer_order_history",
+      "scenario": "read",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "order_id": "ORD1999744",
+          "created_at": "2026-10-31T23:59:37Z",
+          "order_status": "CONFIRMED",
+          "service_type": "MOBILITY",
+          "total_amount": 49000
+        },
+        {
+          "order_id": "ORD1995948",
+          "created_at": "2026-10-31T23:53:59Z",
+          "order_status": "CONFIRMED",
+          "service_type": "DELIVERY",
+          "total_amount": 57000
+        },
+        {
+          "order_id": "ORD1995278",
+          "created_at": "2026-10-31T23:53:00Z",
+          "order_status": "CONFIRMED",
+          "service_type": "FOOD",
+          "total_amount": 57500
+        },
+        {
+          "order_id": "ORD1993213",
+          "created_at": "2026-10-31T23:49:56Z",
+          "order_status": "IN_PROGRESS",
+          "service_type": "DELIVERY",
+          "total_amount": 36000
+        },
+        {
+          "order_id": "ORD1991230",
+          "created_at": "2026-10-31T23:46:59Z",
+          "order_status": "CONFIRMED",
+          "service_type": "FOOD",
+          "total_amount": 52000
+        },
+        {
+          "order_id": "ORD1989256",
+          "created_at": "2026-10-31T23:44:04Z",
+          "order_status": "IN_PROGRESS",
+          "service_type": "DELIVERY",
+          "total_amount": 52000
+        },
+        {
+          "order_id": "ORD1984826",
+          "created_at": "2026-10-31T23:37:29Z",
+          "order_status": "IN_PROGRESS",
+          "service_type": "FOOD",
+          "total_amount": 77500
+        },
+        {
+          "order_id": "ORD1982276",
+          "created_at": "2026-10-31T23:33:42Z",
+          "order_status": "COMPLETED",
+          "service_type": "DELIVERY",
+          "total_amount": 20000
+        },
+        {
+          "order_id": "ORD1980072",
+          "created_at": "2026-10-31T23:30:26Z",
+          "order_status": "CANCELLED",
+          "service_type": "FOOD",
+          "total_amount": 37500
+        },
+        {
+          "order_id": "ORD1974947",
+          "created_at": "2026-10-31T23:22:50Z",
+          "order_status": "COMPLETED",
+          "service_type": "MOBILITY",
+          "total_amount": 20500
+        },
+        {
+          "order_id": "ORD1971012",
+          "created_at": "2026-10-31T23:17:00Z",
+          "order_status": "IN_PROGRESS",
+          "service_type": "FOOD",
+          "total_amount": 45500
+        },
+        {
+          "order_id": "ORD1970083",
+          "created_at": "2026-10-31T23:15:37Z",
+          "order_status": "COMPLETED",
+          "service_type": "DELIVERY",
+          "total_amount": 30000
+        },
+        {
+          "order_id": "ORD1967123",
+          "created_at": "2026-10-31T23:11:13Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 89500
+        },
+        {
+          "order_id": "ORD1965415",
+          "created_at": "2026-10-31T23:08:41Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 88500
+        },
+        {
+          "order_id": "ORD1959116",
+          "created_at": "2026-10-31T22:00:29Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 107500
+        },
+        {
+          "order_id": "ORD1957560",
+          "created_at": "2026-10-31T18:30:02Z",
+          "order_status": "COMPLETED",
+          "service_type": "MOBILITY",
+          "total_amount": 28000
+        },
+        {
+          "order_id": "ORD1956813",
+          "created_at": "2026-10-31T16:49:04Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 31500
+        },
+        {
+          "order_id": "ORD1954603",
+          "created_at": "2026-10-31T11:50:22Z",
+          "order_status": "COMPLETED",
+          "service_type": "MOBILITY",
+          "total_amount": 10000
+        },
+        {
+          "order_id": "ORD1954085",
+          "created_at": "2026-10-31T10:40:17Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 67500
+        },
+        {
+          "order_id": "ORD1952968",
+          "created_at": "2026-10-31T08:09:20Z",
+          "order_status": "COMPLETED",
+          "service_type": "FOOD",
+          "total_amount": 54000
+        }
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        3.872375,
+        2.519667,
+        2.554208
+      ],
+      "mean_ms": 2.982083,
+      "median_ms": 2.554208,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-03-Q01",
+      "requirement_ids": [
+        "PF-03",
+        "PNF-03"
+      ],
+      "dbms": "couchdb",
+      "operation": "trip_status",
+      "scenario": "read",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "trip_id": "TRP0000001",
+        "order_id": "ORD0000001",
+        "trip_status": "CANCELLED",
+        "started_at": null,
+        "completed_at": null,
+        "order_status": "CANCELLED"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        2.440208,
+        3.068708,
+        2.188375
+      ],
+      "mean_ms": 2.565764,
+      "median_ms": 2.440208,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-05-Q01",
+      "requirement_ids": [
+        "PF-05",
+        "PNF-03"
+      ],
+      "dbms": "couchdb",
+      "operation": "open_outlets_in_area",
+      "scenario": "read",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "merchant_outlet_id": "OUT0026204",
+          "outlet_name": "Ayam Geprek Adinata",
+          "address": "Jalan Dipatiukur No. 405, Tebet, Jakarta",
+          "latitude": -6.225576,
+          "longitude": 106.842951
+        },
+        {
+          "merchant_outlet_id": "OUT0015214",
+          "outlet_name": "Ayam Geprek Aditya",
+          "address": "Gg. Rajawali Barat No. 6, Tebet, Jakarta",
+          "latitude": -6.21945,
+          "longitude": 106.849519
+        },
+        {
+          "merchant_outlet_id": "OUT0028367",
+          "outlet_name": "Ayam Geprek Alika",
+          "address": "Gg. Bangka Raya No. 660, Tebet, Jakarta",
+          "latitude": -6.213585,
+          "longitude": 106.847641
+        },
+        {
+          "merchant_outlet_id": "OUT0018928",
+          "outlet_name": "Ayam Geprek Ana",
+          "address": "Gang Setiabudhi No. 68, Tebet, Jakarta",
+          "latitude": -6.240448,
+          "longitude": 106.846137
+        },
+        {
+          "merchant_outlet_id": "OUT0013542",
+          "outlet_name": "Ayam Geprek Ani",
+          "address": "Jalan Jamika No. 6, Tebet, Jakarta",
+          "latitude": -6.218772,
+          "longitude": 106.862449
+        },
+        {
+          "merchant_outlet_id": "OUT0058515",
+          "outlet_name": "Ayam Geprek Asirwanda",
+          "address": "Gang PHH. Mustofa No. 0, Tebet, Jakarta",
+          "latitude": -6.227547,
+          "longitude": 106.861106
+        },
+        {
+          "merchant_outlet_id": "OUT0033008",
+          "outlet_name": "Ayam Geprek Bakiono",
+          "address": "Jalan Tebet Barat Dalam No. 12, Tebet, Jakarta",
+          "latitude": -6.225455,
+          "longitude": 106.862971
+        },
+        {
+          "merchant_outlet_id": "OUT0037311",
+          "outlet_name": "Ayam Geprek Bu Alika",
+          "address": "Gg. Dr. Djunjunan No. 479, Tebet, Jakarta",
+          "latitude": -6.215455,
+          "longitude": 106.867397
+        },
+        {
+          "merchant_outlet_id": "OUT0022527",
+          "outlet_name": "Ayam Geprek Bu Amalia",
+          "address": "Gang Tubagus Ismail No. 4, Tebet, Jakarta",
+          "latitude": -6.21938,
+          "longitude": 106.848074
+        },
+        {
+          "merchant_outlet_id": "OUT0001729",
+          "outlet_name": "Ayam Geprek Bu Ani",
+          "address": "Gg. PHH. Mustofa No. 088, Tebet, Jakarta",
+          "latitude": -6.218512,
+          "longitude": 106.857043
+        },
+        {
+          "merchant_outlet_id": "OUT0056604",
+          "outlet_name": "Ayam Geprek Bu Ani",
+          "address": "Jalan HOS. Cokroaminoto No. 438, Tebet, Jakarta",
+          "latitude": -6.234231,
+          "longitude": 106.83817
+        },
+        {
+          "merchant_outlet_id": "OUT0049910",
+          "outlet_name": "Ayam Geprek Bu Aurora",
+          "address": "Jl. Waringin No. 1, Tebet, Jakarta",
+          "latitude": -6.237531,
+          "longitude": 106.843242
+        },
+        {
+          "merchant_outlet_id": "OUT0054168",
+          "outlet_name": "Ayam Geprek Bu Aurora",
+          "address": "Gg. Ahmad Dahlan No. 5, Tebet, Jakarta",
+          "latitude": -6.240521,
+          "longitude": 106.856446
+        },
+        {
+          "merchant_outlet_id": "OUT0045564",
+          "outlet_name": "Ayam Geprek Bu Cici",
+          "address": "Jl. W.R. Supratman No. 07, Tebet, Jakarta",
+          "latitude": -6.220751,
+          "longitude": 106.866169
+        },
+        {
+          "merchant_outlet_id": "OUT0014070",
+          "outlet_name": "Ayam Geprek Bu Cindy",
+          "address": "Gang Cihampelas No. 45, Tebet, Jakarta",
+          "latitude": -6.218329,
+          "longitude": 106.856938
+        },
+        {
+          "merchant_outlet_id": "OUT0004413",
+          "outlet_name": "Ayam Geprek Bu Citra",
+          "address": "Gg. Jamika No. 53, Tebet, Jakarta",
+          "latitude": -6.235619,
+          "longitude": 106.8662
+        },
+        {
+          "merchant_outlet_id": "OUT0007630",
+          "outlet_name": "Ayam Geprek Bu Diah",
+          "address": "Jalan Waringin No. 3, Tebet, Jakarta",
+          "latitude": -6.219345,
+          "longitude": 106.841624
+        },
+        {
+          "merchant_outlet_id": "OUT0009208",
+          "outlet_name": "Ayam Geprek Bu Dina",
+          "address": "Gang Erlangga No. 335, Tebet, Jakarta",
+          "latitude": -6.230617,
+          "longitude": 106.838735
+        },
+        {
+          "merchant_outlet_id": "OUT0036479",
+          "outlet_name": "Ayam Geprek Bu Dina",
+          "address": "Jalan KH Amin Jasuta No. 4, Tebet, Jakarta",
+          "latitude": -6.225296,
+          "longitude": 106.865558
+        },
+        {
+          "merchant_outlet_id": "OUT0030405",
+          "outlet_name": "Ayam Geprek Bu Eka",
+          "address": "Jl. Antapani Lama No. 40, Tebet, Jakarta",
+          "latitude": -6.237961,
+          "longitude": 106.850183
+        }
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        10.643167,
+        9.239958,
+        10.602667
+      ],
+      "mean_ms": 10.161931,
+      "median_ms": 10.602667,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-01-Q03",
+      "requirement_ids": [
+        "PF-01",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "create_confirmed_order_with_trip",
+      "scenario": "create",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "_id": "ORD9999001",
+        "type": "service_order",
+        "order_id": "ORD9999001",
+        "customer_id": "CUS0000001",
+        "created_at": "2026-11-21T23:02:28Z",
+        "order_status": "CONFIRMED",
+        "total_amount": 15000.0,
+        "service_type": "MOBILITY",
+        "mobility": {
+          "ride_type": "GrabBike",
+          "passenger_count": 1,
+          "pickup_notes": null
+        },
+        "payment": {
+          "payment_id": "PAY9999001",
+          "payment_method": "CASH",
+          "payment_status": "PENDING",
+          "amount": 15000.0,
+          "paid_at": null
+        },
+        "trips": [
+          {
+            "trip_id": "TRP9999001",
+            "trip_status": "SEARCHING",
+            "started_at": null,
+            "completed_at": null,
+            "start_location_id": "LOC0000001",
+            "end_location_id": "LOC0000002",
+            "start_service_area_id": "SAR0000021",
+            "assignments": []
+          }
+        ],
+        "_rev": "1-0ffbd41635a3f013f626dc9f7ba3880c"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        9.875792,
+        11.286459,
+        10.337667
+      ],
+      "mean_ms": 10.499973,
+      "median_ms": 10.337667,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-02-Q01",
+      "requirement_ids": [
+        "PF-02",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "dispatch_offer",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "assignment_id": "ASN9999001",
+        "assignment_status": "PENDING",
+        "assigned_at": "2026-11-21T23:02:28Z",
+        "responded_at": null,
+        "ended_at": null,
+        "end_reason": null,
+        "vehicle_id": "VEH0000001",
+        "driver_partner_id": "DRV0000001",
+        "vehicle_type": "Motorcycle"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        10.228667,
+        10.253416,
+        9.732041
+      ],
+      "mean_ms": 10.071375,
+      "median_ms": 10.228667,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-02-Q02",
+      "requirement_ids": [
+        "PF-02",
+        "PF-03",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "accept_offer_and_start_trip",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "trip_id": "TRP9999001",
+        "trip_status": "IN_PROGRESS",
+        "started_at": "2026-11-21T23:02:29Z",
+        "completed_at": null,
+        "start_location_id": "LOC0000001",
+        "end_location_id": "LOC0000002",
+        "start_service_area_id": "SAR0000021",
+        "assignments": [
+          {
+            "assignment_id": "ASN9999001",
+            "assignment_status": "ACCEPTED",
+            "assigned_at": "2026-11-21T23:02:29Z",
+            "responded_at": "2026-11-21T23:02:29Z",
+            "ended_at": null,
+            "end_reason": null,
+            "vehicle_id": "VEH0000001",
+            "driver_partner_id": "DRV0000001",
+            "vehicle_type": "Motorcycle"
+          }
+        ]
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        13.952042,
+        14.09225,
+        17.738667
+      ],
+      "mean_ms": 15.260986,
+      "median_ms": 14.09225,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-02-Q03",
+      "requirement_ids": [
+        "PF-02",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "reject_offer",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "assignment_id": "ASN9999002",
+        "assignment_status": "REJECTED",
+        "assigned_at": "2026-11-21T23:02:29Z",
+        "responded_at": "2026-11-21T23:02:29Z",
+        "ended_at": "2026-11-21T23:02:29Z",
+        "end_reason": "Too far from pickup location",
+        "vehicle_id": "VEH0000001",
+        "driver_partner_id": "DRV0000001",
+        "vehicle_type": "Motorcycle"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        8.093958,
+        8.156958,
+        8.496875
+      ],
+      "mean_ms": 8.249264,
+      "median_ms": 8.156958,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-03-Q02",
+      "requirement_ids": [
+        "PF-03",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "complete_trip_and_release_driver",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "trip": {
+          "trip_id": "TRP9999001",
+          "trip_status": "COMPLETED",
+          "started_at": "2026-11-21T23:02:29Z",
+          "completed_at": "2026-11-21T23:02:29Z",
+          "start_location_id": "LOC0000001",
+          "end_location_id": "LOC0000002",
+          "start_service_area_id": "SAR0000021",
+          "assignments": [
+            {
+              "assignment_id": "ASN9999001",
+              "assignment_status": "ACCEPTED",
+              "assigned_at": "2026-11-21T23:02:29Z",
+              "responded_at": "2026-11-21T23:02:29Z",
+              "ended_at": "2026-11-21T23:02:29Z",
+              "end_reason": null,
+              "vehicle_id": "VEH0000001",
+              "driver_partner_id": "DRV0000001",
+              "vehicle_type": "Motorcycle"
+            }
+          ]
+        },
+        "driver_partner_id": "DRV0000001",
+        "driver_status": "ACTIVE"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        20.765458,
+        21.828875,
+        15.913541
+      ],
+      "mean_ms": 19.502625,
+      "median_ms": 20.765458,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-04-Q01",
+      "requirement_ids": [
+        "PF-04",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "checkout_non_cash_with_retry",
+      "scenario": "create",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "_id": "ORD9999101",
+        "type": "service_order",
+        "order_id": "ORD9999101",
+        "customer_id": "CUS0000001",
+        "created_at": "2026-11-21T23:02:29Z",
+        "order_status": "CONFIRMED",
+        "total_amount": 20000.0,
+        "service_type": "MOBILITY",
+        "mobility": {
+          "ride_type": "GrabCar",
+          "passenger_count": 2,
+          "pickup_notes": "Saya tunggu di lobi"
+        },
+        "payment": {
+          "payment_id": "PAY9999101",
+          "payment_method": "E_WALLET",
+          "payment_status": "PAID",
+          "amount": 20000.0,
+          "paid_at": "2026-11-21T23:02:29Z"
+        },
+        "trips": [
+          {
+            "trip_id": "TRP9999101",
+            "trip_status": "SEARCHING",
+            "started_at": null,
+            "completed_at": null,
+            "start_location_id": "LOC0000001",
+            "end_location_id": "LOC0000002",
+            "start_service_area_id": "SAR0000021",
+            "assignments": []
+          }
+        ],
+        "_rev": "4-3c0ca49e15ab25d87bfdd1fe1a1c972c"
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        27.868417,
+        27.140166,
+        27.109959
+      ],
+      "mean_ms": 27.372847,
+      "median_ms": 27.140166,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-04-Q02",
+      "requirement_ids": [
+        "PF-04",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "cancel_before_pickup",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "cancelled": true,
+        "order": {
+          "_id": "ORD9999101",
+          "_rev": "6-8068ccd343275cab56e811180b12dd1d",
+          "type": "service_order",
+          "order_id": "ORD9999101",
+          "customer_id": "CUS0000001",
+          "created_at": "2026-11-21T23:02:29Z",
+          "order_status": "CANCELLED",
+          "total_amount": 20000.0,
+          "service_type": "MOBILITY",
+          "mobility": {
+            "ride_type": "GrabCar",
+            "passenger_count": 2,
+            "pickup_notes": "Saya tunggu di lobi"
+          },
+          "payment": {
+            "payment_id": "PAY9999101",
+            "payment_method": "E_WALLET",
+            "payment_status": "REFUNDED",
+            "amount": 20000.0,
+            "paid_at": "2026-11-21T23:02:29Z"
+          },
+          "trips": [
+            {
+              "trip_id": "TRP9999101",
+              "trip_status": "CANCELLED",
+              "started_at": null,
+              "completed_at": null,
+              "start_location_id": "LOC0000001",
+              "end_location_id": "LOC0000002",
+              "start_service_area_id": "SAR0000021",
+              "assignments": [
+                {
+                  "assignment_id": "<max depth>",
+                  "assignment_status": "<max depth>",
+                  "assigned_at": "<max depth>",
+                  "responded_at": "<max depth>",
+                  "ended_at": "<max depth>",
+                  "end_reason": "<max depth>",
+                  "vehicle_id": "<max depth>",
+                  "driver_partner_id": "<max depth>",
+                  "vehicle_type": "<max depth>"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        9.354791,
+        7.606916,
+        7.856583
+      ],
+      "mean_ms": 8.272763,
+      "median_ms": 7.856583,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-04-Q03",
+      "requirement_ids": [
+        "PF-04",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "complete_cash_ride",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "_id": "ORD9999102",
+        "_rev": "2-352c070270d4a1fa5f9d0d5e43448878",
+        "type": "service_order",
+        "order_id": "ORD9999102",
+        "customer_id": "CUS0000001",
+        "created_at": "2026-11-21T22:32:30Z",
+        "order_status": "COMPLETED",
+        "total_amount": 18000.0,
+        "service_type": "MOBILITY",
+        "mobility": {
+          "ride_type": "GrabBike",
+          "passenger_count": 1,
+          "pickup_notes": null
+        },
+        "payment": {
+          "payment_id": "PAY9999102",
+          "payment_method": "CASH",
+          "payment_status": "PAID",
+          "amount": 18000.0,
+          "paid_at": "2026-11-21T23:02:30Z"
+        },
+        "trips": [
+          {
+            "trip_id": "TRP9999102",
+            "trip_status": "COMPLETED",
+            "started_at": "2026-11-21T22:42:30Z",
+            "completed_at": "2026-11-21T23:02:30Z",
+            "start_location_id": "LOC0000001",
+            "end_location_id": "LOC0000002",
+            "start_service_area_id": "SAR0000021",
+            "assignments": []
+          }
+        ]
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        8.273375,
+        8.209625,
+        8.328917
+      ],
+      "mean_ms": 8.270639,
+      "median_ms": 8.273375,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-06-Q01",
+      "requirement_ids": [
+        "PF-06",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "onboard_service_area",
+      "scenario": "create",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "service_area_id": "SAR9999101",
+        "documents_written": 6
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        18.081875,
+        20.424,
+        18.115125
+      ],
+      "mean_ms": 18.873667,
+      "median_ms": 18.115125,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-06-Q02",
+      "requirement_ids": [
+        "PF-06",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "deactivate_service_area",
+      "scenario": "update",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "service_area_id": "SAR9999101",
+        "area_status": "INACTIVE",
+        "outlets": {
+          "OUT9999101": "INACTIVE",
+          "OUT9999102": "CLOSED"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        33.88825,
+        42.958,
+        37.174083
+      ],
+      "mean_ms": 38.006778,
+      "median_ms": 37.174083,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-07-Q01",
+      "requirement_ids": [
+        "PF-07",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "delete_outlet",
+      "scenario": "delete",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "deleted": true,
+        "rev": "2-2f58a2926eeb2270ab10d8efcd657129",
+        "food_orders": 0
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        10.368708,
+        10.124792,
+        10.868334
+      ],
+      "mean_ms": 10.453945,
+      "median_ms": 10.368708,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-07-Q02",
+      "requirement_ids": [
+        "PF-07",
+        "PNF-04"
+      ],
+      "dbms": "couchdb",
+      "operation": "delete_outlet",
+      "scenario": "delete",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": {
+        "deleted": false,
+        "reason": "outlet is referenced by food orders",
+        "food_orders": 1
+      },
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        13.808542,
+        24.605125,
+        14.715209
+      ],
+      "mean_ms": 17.709625,
+      "median_ms": 14.715209,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-02-Q04",
+      "requirement_ids": [
+        "PF-02",
+        "PF-08"
+      ],
+      "dbms": "couchdb",
+      "operation": "reassignment_history",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "trip_id": "TRP1956930",
+          "order_id": "ORD1998815",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956843",
+          "order_id": "ORD1998726",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956771",
+          "order_id": "ORD1998653",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956764",
+          "order_id": "ORD1998645",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956685",
+          "order_id": "ORD1998563",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956673",
+          "order_id": "ORD1998550",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956623",
+          "order_id": "ORD1998500",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956614",
+          "order_id": "ORD1998491",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956546",
+          "order_id": "ORD1998422",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956517",
+          "order_id": "ORD1998392",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956488",
+          "order_id": "ORD1998363",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956465",
+          "order_id": "ORD1998340",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956451",
+          "order_id": "ORD1998326",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956400",
+          "order_id": "ORD1998275",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956385",
+          "order_id": "ORD1998260",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956355",
+          "order_id": "ORD1998229",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956343",
+          "order_id": "ORD1998216",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956330",
+          "order_id": "ORD1998203",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956300",
+          "order_id": "ORD1998173",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "trip_id": "TRP1956289",
+          "order_id": "ORD1998162",
+          "trip_status": "ALLOCATED",
+          "total_attempts": 4,
+          "started_at": null,
+          "completed_at": null
+        },
+        "<and 260004 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        4465.874125,
+        4546.462667,
+        4372.375291
+      ],
+      "mean_ms": 4461.570694,
+      "median_ms": 4465.874125,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-08-Q01",
+      "requirement_ids": [
+        "PF-08",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "driver_acceptance_rates",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "driver_partner_id": "DRV0071552",
+          "full_name": "Padma Laksita",
+          "total_accepted": 28,
+          "total_rejected": 0,
+          "total_expired": 4,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0068730",
+          "full_name": "Jamal Sihotang",
+          "total_accepted": 25,
+          "total_rejected": 0,
+          "total_expired": 7,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0099370",
+          "full_name": "Cahyanto Winarno",
+          "total_accepted": 24,
+          "total_rejected": 0,
+          "total_expired": 7,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0016513",
+          "full_name": "Pranata Puspita",
+          "total_accepted": 23,
+          "total_rejected": 0,
+          "total_expired": 4,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0057417",
+          "full_name": "Hari Ardianto",
+          "total_accepted": 23,
+          "total_rejected": 0,
+          "total_expired": 2,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0097726",
+          "full_name": "Cawisono Pratiwi",
+          "total_accepted": 22,
+          "total_rejected": 0,
+          "total_expired": 2,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0021404",
+          "full_name": "Rini Hariyah",
+          "total_accepted": 20,
+          "total_rejected": 0,
+          "total_expired": 1,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0038178",
+          "full_name": "Karsana Kuswandari",
+          "total_accepted": 20,
+          "total_rejected": 0,
+          "total_expired": 7,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0011301",
+          "full_name": "Manah Natsir",
+          "total_accepted": 19,
+          "total_rejected": 0,
+          "total_expired": 8,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0014054",
+          "full_name": "Perkasa Saragih",
+          "total_accepted": 19,
+          "total_rejected": 0,
+          "total_expired": 5,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0020717",
+          "full_name": "Amelia Maryati",
+          "total_accepted": 19,
+          "total_rejected": 0,
+          "total_expired": 8,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0072902",
+          "full_name": "Cager Permata",
+          "total_accepted": 19,
+          "total_rejected": 0,
+          "total_expired": 5,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0084207",
+          "full_name": "Latif Dabukke",
+          "total_accepted": 18,
+          "total_rejected": 0,
+          "total_expired": 1,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0005370",
+          "full_name": "Ella Waskita",
+          "total_accepted": 17,
+          "total_rejected": 0,
+          "total_expired": 1,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0018729",
+          "full_name": "Shania Purwanti",
+          "total_accepted": 17,
+          "total_rejected": 0,
+          "total_expired": 1,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0021418",
+          "full_name": "Puput Sihombing",
+          "total_accepted": 17,
+          "total_rejected": 0,
+          "total_expired": 1,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0079234",
+          "full_name": "Dariati Yuniar",
+          "total_accepted": 17,
+          "total_rejected": 0,
+          "total_expired": 7,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0003494",
+          "full_name": "Tugiman Prasetya",
+          "total_accepted": 16,
+          "total_rejected": 0,
+          "total_expired": 2,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0011285",
+          "full_name": "Jamil Mandala",
+          "total_accepted": 16,
+          "total_rejected": 0,
+          "total_expired": 3,
+          "acceptance_rate_percentage": 100.0
+        },
+        {
+          "driver_partner_id": "DRV0030992",
+          "full_name": "Cahya Megantara",
+          "total_accepted": 16,
+          "total_rejected": 0,
+          "total_expired": 3,
+          "acceptance_rate_percentage": 100.0
+        },
+        "<and 99732 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        12801.135375,
+        12726.994334,
+        12998.063375
+      ],
+      "mean_ms": 12842.064361,
+      "median_ms": 12801.135375,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-08-Q02",
+      "requirement_ids": [
+        "PF-08",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "top_drivers_by_duration",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "driver_partner_id": "DRV0064085",
+          "full_name": "Kacung Wulandari",
+          "total_completed_trips": 51,
+          "total_duration_minutes": 1376.9,
+          "avg_duration_per_trip_minutes": 27.0
+        },
+        {
+          "driver_partner_id": "DRV0030293",
+          "full_name": "Harjasa Habibi",
+          "total_completed_trips": 62,
+          "total_duration_minutes": 1375.73,
+          "avg_duration_per_trip_minutes": 22.19
+        },
+        {
+          "driver_partner_id": "DRV0075421",
+          "full_name": "Lala Laksita",
+          "total_completed_trips": 57,
+          "total_duration_minutes": 1367.82,
+          "avg_duration_per_trip_minutes": 24.0
+        },
+        {
+          "driver_partner_id": "DRV0040086",
+          "full_name": "Kawaca Rahmawati",
+          "total_completed_trips": 58,
+          "total_duration_minutes": 1324.55,
+          "avg_duration_per_trip_minutes": 22.84
+        },
+        {
+          "driver_partner_id": "DRV0069666",
+          "full_name": "Adika Pradana",
+          "total_completed_trips": 50,
+          "total_duration_minutes": 1308.9,
+          "avg_duration_per_trip_minutes": 26.18
+        },
+        {
+          "driver_partner_id": "DRV0059138",
+          "full_name": "Elma Agustina",
+          "total_completed_trips": 48,
+          "total_duration_minutes": 1308.77,
+          "avg_duration_per_trip_minutes": 27.27
+        },
+        {
+          "driver_partner_id": "DRV0082601",
+          "full_name": "Argono Sitompul",
+          "total_completed_trips": 57,
+          "total_duration_minutes": 1302.25,
+          "avg_duration_per_trip_minutes": 22.85
+        },
+        {
+          "driver_partner_id": "DRV0088985",
+          "full_name": "Jaiman Padmasari",
+          "total_completed_trips": 51,
+          "total_duration_minutes": 1300.37,
+          "avg_duration_per_trip_minutes": 25.5
+        },
+        {
+          "driver_partner_id": "DRV0038201",
+          "full_name": "Galur Mardhiyah",
+          "total_completed_trips": 54,
+          "total_duration_minutes": 1299.1,
+          "avg_duration_per_trip_minutes": 24.06
+        },
+        {
+          "driver_partner_id": "DRV0097052",
+          "full_name": "Zalindra Hassanah",
+          "total_completed_trips": 46,
+          "total_duration_minutes": 1298.2,
+          "avg_duration_per_trip_minutes": 28.22
+        }
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        5952.719958,
+        5866.944542,
+        5856.131125
+      ],
+      "mean_ms": 5891.931875,
+      "median_ms": 5866.944542,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-08-Q03",
+      "requirement_ids": [
+        "PF-08",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "vehicle_type_hourly_utilization",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "vehicle_type": "Motorcycle",
+          "trip_hour": 0,
+          "total_trips": 49069,
+          "unique_vehicles_used": 33561
+        },
+        {
+          "vehicle_type": "Car",
+          "trip_hour": 0,
+          "total_trips": 12350,
+          "unique_vehicles_used": 9925
+        },
+        {
+          "vehicle_type": "Electric Motorcycle",
+          "trip_hour": 0,
+          "total_trips": 4502,
+          "unique_vehicles_used": 3121
+        },
+        {
+          "vehicle_type": "Premium Car",
+          "trip_hour": 0,
+          "total_trips": 2228,
+          "unique_vehicles_used": 1958
+        },
+        {
+          "vehicle_type": "Electric Car",
+          "trip_hour": 0,
+          "total_trips": 1405,
+          "unique_vehicles_used": 1202
+        },
+        {
+          "vehicle_type": "Taxi",
+          "trip_hour": 0,
+          "total_trips": 1364,
+          "unique_vehicles_used": 1148
+        },
+        {
+          "vehicle_type": "Motorcycle",
+          "trip_hour": 1,
+          "total_trips": 48666,
+          "unique_vehicles_used": 33547
+        },
+        {
+          "vehicle_type": "Car",
+          "trip_hour": 1,
+          "total_trips": 12299,
+          "unique_vehicles_used": 9980
+        },
+        {
+          "vehicle_type": "Electric Motorcycle",
+          "trip_hour": 1,
+          "total_trips": 4638,
+          "unique_vehicles_used": 3127
+        },
+        {
+          "vehicle_type": "Premium Car",
+          "trip_hour": 1,
+          "total_trips": 2256,
+          "unique_vehicles_used": 1975
+        },
+        {
+          "vehicle_type": "Electric Car",
+          "trip_hour": 1,
+          "total_trips": 1401,
+          "unique_vehicles_used": 1205
+        },
+        {
+          "vehicle_type": "Taxi",
+          "trip_hour": 1,
+          "total_trips": 1350,
+          "unique_vehicles_used": 1158
+        },
+        {
+          "vehicle_type": "Motorcycle",
+          "trip_hour": 2,
+          "total_trips": 49102,
+          "unique_vehicles_used": 33632
+        },
+        {
+          "vehicle_type": "Car",
+          "trip_hour": 2,
+          "total_trips": 12366,
+          "unique_vehicles_used": 9970
+        },
+        {
+          "vehicle_type": "Electric Motorcycle",
+          "trip_hour": 2,
+          "total_trips": 4566,
+          "unique_vehicles_used": 3103
+        },
+        {
+          "vehicle_type": "Premium Car",
+          "trip_hour": 2,
+          "total_trips": 2237,
+          "unique_vehicles_used": 1941
+        },
+        {
+          "vehicle_type": "Electric Car",
+          "trip_hour": 2,
+          "total_trips": 1380,
+          "unique_vehicles_used": 1198
+        },
+        {
+          "vehicle_type": "Taxi",
+          "trip_hour": 2,
+          "total_trips": 1348,
+          "unique_vehicles_used": 1169
+        },
+        {
+          "vehicle_type": "Motorcycle",
+          "trip_hour": 3,
+          "total_trips": 48997,
+          "unique_vehicles_used": 33696
+        },
+        {
+          "vehicle_type": "Car",
+          "trip_hour": 3,
+          "total_trips": 12384,
+          "unique_vehicles_used": 9976
+        },
+        "<and 124 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        10484.309167,
+        10551.344709,
+        10339.392083
+      ],
+      "mean_ms": 10458.348653,
+      "median_ms": 10484.309167,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-09-Q01",
+      "requirement_ids": [
+        "PF-09",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "trips_per_service_area",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "service_area_id": "SAR0000009",
+          "area_name": "Coblong",
+          "city": "Bandung",
+          "total_trips": 86234
+        },
+        {
+          "service_area_id": "SAR0000010",
+          "area_name": "Sukajadi",
+          "city": "Bandung",
+          "total_trips": 85960
+        },
+        {
+          "service_area_id": "SAR0000005",
+          "area_name": "Cengkareng",
+          "city": "Jakarta",
+          "total_trips": 85911
+        },
+        {
+          "service_area_id": "SAR0000001",
+          "area_name": "Menteng",
+          "city": "Jakarta",
+          "total_trips": 85892
+        },
+        {
+          "service_area_id": "SAR0000012",
+          "area_name": "Buahbatu",
+          "city": "Bandung",
+          "total_trips": 85881
+        },
+        {
+          "service_area_id": "SAR0000011",
+          "area_name": "Lengkong",
+          "city": "Bandung",
+          "total_trips": 85772
+        },
+        {
+          "service_area_id": "SAR0000017",
+          "area_name": "Gondokusuman",
+          "city": "Yogyakarta",
+          "total_trips": 85698
+        },
+        {
+          "service_area_id": "SAR0000020",
+          "area_name": "Medan Baru",
+          "city": "Medan",
+          "total_trips": 85671
+        },
+        {
+          "service_area_id": "SAR0000018",
+          "area_name": "Mergangsan",
+          "city": "Yogyakarta",
+          "total_trips": 85659
+        },
+        {
+          "service_area_id": "SAR0000004",
+          "area_name": "Kelapa Gading",
+          "city": "Jakarta",
+          "total_trips": 85557
+        },
+        {
+          "service_area_id": "SAR0000019",
+          "area_name": "Kotagede",
+          "city": "Yogyakarta",
+          "total_trips": 85404
+        },
+        {
+          "service_area_id": "SAR0000002",
+          "area_name": "Tanah Abang",
+          "city": "Jakarta",
+          "total_trips": 85212
+        },
+        {
+          "service_area_id": "SAR0000021",
+          "area_name": "Medan Petisah",
+          "city": "Medan",
+          "total_trips": 85197
+        },
+        {
+          "service_area_id": "SAR0000013",
+          "area_name": "Gubeng",
+          "city": "Surabaya",
+          "total_trips": 84901
+        },
+        {
+          "service_area_id": "SAR0000015",
+          "area_name": "Wonokromo",
+          "city": "Surabaya",
+          "total_trips": 84706
+        },
+        {
+          "service_area_id": "SAR0000014",
+          "area_name": "Tegalsari",
+          "city": "Surabaya",
+          "total_trips": 84679
+        },
+        {
+          "service_area_id": "SAR0000016",
+          "area_name": "Sukolilo",
+          "city": "Surabaya",
+          "total_trips": 84626
+        },
+        {
+          "service_area_id": "SAR0000003",
+          "area_name": "Kebayoran Baru",
+          "city": "Jakarta",
+          "total_trips": 84590
+        },
+        {
+          "service_area_id": "SAR0000006",
+          "area_name": "Pasar Minggu",
+          "city": "Jakarta",
+          "total_trips": 84588
+        },
+        {
+          "service_area_id": "SAR0000008",
+          "area_name": "Cilandak",
+          "city": "Jakarta",
+          "total_trips": 84588
+        },
+        "<and 3 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        39.896167,
+        38.64225,
+        38.771709
+      ],
+      "mean_ms": 39.103375,
+      "median_ms": 38.771709,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-09-Q02",
+      "requirement_ids": [
+        "PF-09",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "outlet_supply_vs_food_demand",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "city": "Jakarta",
+          "area_name": "Menteng",
+          "area_status": "ACTIVE",
+          "total_outlets": 2635,
+          "open_outlets": 2118,
+          "food_orders": 5507,
+          "orders_per_open_outlet": 2.6
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Lengkong",
+          "area_status": "ACTIVE",
+          "total_outlets": 2638,
+          "open_outlets": 2083,
+          "food_orders": 5340,
+          "orders_per_open_outlet": 2.56
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Pasar Minggu",
+          "area_status": "ACTIVE",
+          "total_outlets": 2581,
+          "open_outlets": 2028,
+          "food_orders": 5190,
+          "orders_per_open_outlet": 2.56
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Buahbatu",
+          "area_status": "ACTIVE",
+          "total_outlets": 2665,
+          "open_outlets": 2134,
+          "food_orders": 5379,
+          "orders_per_open_outlet": 2.52
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Sukajadi",
+          "area_status": "ACTIVE",
+          "total_outlets": 2669,
+          "open_outlets": 2141,
+          "food_orders": 5388,
+          "orders_per_open_outlet": 2.52
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Cengkareng",
+          "area_status": "ACTIVE",
+          "total_outlets": 2676,
+          "open_outlets": 2153,
+          "food_orders": 5417,
+          "orders_per_open_outlet": 2.52
+        },
+        {
+          "city": "Medan",
+          "area_name": "Medan Baru",
+          "area_status": "ACTIVE",
+          "total_outlets": 2620,
+          "open_outlets": 2089,
+          "food_orders": 5273,
+          "orders_per_open_outlet": 2.52
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Kebayoran Baru",
+          "area_status": "ACTIVE",
+          "total_outlets": 2529,
+          "open_outlets": 2030,
+          "food_orders": 5087,
+          "orders_per_open_outlet": 2.51
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Gubeng",
+          "area_status": "ACTIVE",
+          "total_outlets": 2619,
+          "open_outlets": 2093,
+          "food_orders": 5243,
+          "orders_per_open_outlet": 2.51
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Kelapa Gading",
+          "area_status": "ACTIVE",
+          "total_outlets": 2613,
+          "open_outlets": 2071,
+          "food_orders": 5181,
+          "orders_per_open_outlet": 2.5
+        },
+        {
+          "city": "Denpasar",
+          "area_name": "Denpasar Selatan",
+          "area_status": "ACTIVE",
+          "total_outlets": 2561,
+          "open_outlets": 2034,
+          "food_orders": 5066,
+          "orders_per_open_outlet": 2.49
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Cilandak",
+          "area_status": "ACTIVE",
+          "total_outlets": 2569,
+          "open_outlets": 2052,
+          "food_orders": 5100,
+          "orders_per_open_outlet": 2.49
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Tebet",
+          "area_status": "ACTIVE",
+          "total_outlets": 2594,
+          "open_outlets": 2034,
+          "food_orders": 5032,
+          "orders_per_open_outlet": 2.47
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Tegalsari",
+          "area_status": "ACTIVE",
+          "total_outlets": 2543,
+          "open_outlets": 2053,
+          "food_orders": 5061,
+          "orders_per_open_outlet": 2.47
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Wonokromo",
+          "area_status": "ACTIVE",
+          "total_outlets": 2549,
+          "open_outlets": 2038,
+          "food_orders": 5035,
+          "orders_per_open_outlet": 2.47
+        },
+        {
+          "city": "Yogyakarta",
+          "area_name": "Kotagede",
+          "area_status": "ACTIVE",
+          "total_outlets": 2593,
+          "open_outlets": 2085,
+          "food_orders": 5146,
+          "orders_per_open_outlet": 2.47
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Coblong",
+          "area_status": "ACTIVE",
+          "total_outlets": 2647,
+          "open_outlets": 2136,
+          "food_orders": 5249,
+          "orders_per_open_outlet": 2.46
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Tanah Abang",
+          "area_status": "ACTIVE",
+          "total_outlets": 2625,
+          "open_outlets": 2121,
+          "food_orders": 5227,
+          "orders_per_open_outlet": 2.46
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Sukolilo",
+          "area_status": "ACTIVE",
+          "total_outlets": 2572,
+          "open_outlets": 2060,
+          "food_orders": 5060,
+          "orders_per_open_outlet": 2.46
+        },
+        {
+          "city": "Yogyakarta",
+          "area_name": "Mergangsan",
+          "area_status": "ACTIVE",
+          "total_outlets": 2564,
+          "open_outlets": 2074,
+          "food_orders": 5082,
+          "orders_per_open_outlet": 2.45
+        },
+        "<and 3 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        310.369708,
+        311.976333,
+        310.057
+      ],
+      "mean_ms": 310.801014,
+      "median_ms": 310.369708,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-10-Q01",
+      "requirement_ids": [
+        "PF-10",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "revenue_and_refunds_per_area",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "city": "Jakarta",
+          "area_name": "Cengkareng",
+          "settled_payments": 82447,
+          "net_revenue": 5536849000.0,
+          "refunded_amount": 555359500.0,
+          "refund_rate_pct": 9.16
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Kelapa Gading",
+          "settled_payments": 82103,
+          "net_revenue": 5305748500.0,
+          "refunded_amount": 543239500.0,
+          "refund_rate_pct": 9.28
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Cilandak",
+          "settled_payments": 81172,
+          "net_revenue": 4497901000.0,
+          "refunded_amount": 454400000.0,
+          "refund_rate_pct": 9.09
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Pasar Minggu",
+          "settled_payments": 81213,
+          "net_revenue": 4401595500.0,
+          "refunded_amount": 450875000.0,
+          "refund_rate_pct": 9.3
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Menteng",
+          "settled_payments": 82511,
+          "net_revenue": 3902125500.0,
+          "refunded_amount": 398626000.0,
+          "refund_rate_pct": 9.26
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Kebayoran Baru",
+          "settled_payments": 81307,
+          "net_revenue": 3880959000.0,
+          "refunded_amount": 392489500.0,
+          "refund_rate_pct": 9.19
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Tebet",
+          "settled_payments": 80558,
+          "net_revenue": 3837410000.0,
+          "refunded_amount": 383583500.0,
+          "refund_rate_pct": 9.15
+        },
+        {
+          "city": "Jakarta",
+          "area_name": "Tanah Abang",
+          "settled_payments": 81901,
+          "net_revenue": 3823855500.0,
+          "refunded_amount": 388036500.0,
+          "refund_rate_pct": 9.26
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Buahbatu",
+          "settled_payments": 82476,
+          "net_revenue": 3401479500.0,
+          "refunded_amount": 338975000.0,
+          "refund_rate_pct": 9.17
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Sukajadi",
+          "settled_payments": 82664,
+          "net_revenue": 3261664500.0,
+          "refunded_amount": 332531000.0,
+          "refund_rate_pct": 9.23
+        },
+        {
+          "city": "Denpasar",
+          "area_name": "Denpasar Selatan",
+          "settled_payments": 81348,
+          "net_revenue": 3220862500.0,
+          "refunded_amount": 334078500.0,
+          "refund_rate_pct": 9.31
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Sukolilo",
+          "settled_payments": 81275,
+          "net_revenue": 3210917500.0,
+          "refunded_amount": 321958000.0,
+          "refund_rate_pct": 9.15
+        },
+        {
+          "city": "Denpasar",
+          "area_name": "Denpasar Utara",
+          "settled_payments": 79690,
+          "net_revenue": 3175903000.0,
+          "refunded_amount": 318209000.0,
+          "refund_rate_pct": 9.09
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Coblong",
+          "settled_payments": 82930,
+          "net_revenue": 3122616000.0,
+          "refunded_amount": 313017000.0,
+          "refund_rate_pct": 9.11
+        },
+        {
+          "city": "Bandung",
+          "area_name": "Lengkong",
+          "settled_payments": 82479,
+          "net_revenue": 3059496000.0,
+          "refunded_amount": 307115500.0,
+          "refund_rate_pct": 9.16
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Wonokromo",
+          "settled_payments": 81547,
+          "net_revenue": 2980608500.0,
+          "refunded_amount": 302818500.0,
+          "refund_rate_pct": 9.27
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Tegalsari",
+          "settled_payments": 81408,
+          "net_revenue": 2941628000.0,
+          "refunded_amount": 299819000.0,
+          "refund_rate_pct": 9.28
+        },
+        {
+          "city": "Yogyakarta",
+          "area_name": "Kotagede",
+          "settled_payments": 82253,
+          "net_revenue": 2939742500.0,
+          "refunded_amount": 300907500.0,
+          "refund_rate_pct": 9.27
+        },
+        {
+          "city": "Yogyakarta",
+          "area_name": "Gondokusuman",
+          "settled_payments": 82521,
+          "net_revenue": 2937486000.0,
+          "refunded_amount": 299795000.0,
+          "refund_rate_pct": 9.23
+        },
+        {
+          "city": "Surabaya",
+          "area_name": "Gubeng",
+          "settled_payments": 81763,
+          "net_revenue": 2829768000.0,
+          "refunded_amount": 292060000.0,
+          "refund_rate_pct": 9.37
+        },
+        "<and 3 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        47.485958,
+        46.812417,
+        46.821625
+      ],
+      "mean_ms": 47.04,
+      "median_ms": 46.821625,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-10-Q02",
+      "requirement_ids": [
+        "PF-10",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "monthly_payment_summary",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148263,
+          "paid": 125607,
+          "refunded": 18237,
+          "failed": 4419,
+          "pending": 0,
+          "paid_pct": 84.72,
+          "net_revenue": 5902812500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "CASH",
+          "total_payments": 99650,
+          "paid": 88169,
+          "refunded": 0,
+          "failed": 11481,
+          "pending": 0,
+          "paid_pct": 88.48,
+          "net_revenue": 4135309000.0,
+          "avg_settle_minutes": 33.9
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49245,
+          "paid": 41693,
+          "refunded": 6062,
+          "failed": 1490,
+          "pending": 0,
+          "paid_pct": 84.66,
+          "net_revenue": 1959677000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-05-01",
+          "payment_method": "CARD",
+          "total_payments": 33059,
+          "paid": 28002,
+          "refunded": 4021,
+          "failed": 1036,
+          "pending": 0,
+          "paid_pct": 84.7,
+          "net_revenue": 1318878500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 143706,
+          "paid": 121622,
+          "refunded": 17843,
+          "failed": 4241,
+          "pending": 0,
+          "paid_pct": 84.63,
+          "net_revenue": 5713361500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "CASH",
+          "total_payments": 96206,
+          "paid": 85161,
+          "refunded": 0,
+          "failed": 11045,
+          "pending": 0,
+          "paid_pct": 88.52,
+          "net_revenue": 3997149000.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 48010,
+          "paid": 40521,
+          "refunded": 6058,
+          "failed": 1431,
+          "pending": 0,
+          "paid_pct": 84.4,
+          "net_revenue": 1896077500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-06-01",
+          "payment_method": "CARD",
+          "total_payments": 31644,
+          "paid": 26778,
+          "refunded": 3906,
+          "failed": 960,
+          "pending": 0,
+          "paid_pct": 84.62,
+          "net_revenue": 1265779000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148609,
+          "paid": 125555,
+          "refunded": 18531,
+          "failed": 4523,
+          "pending": 0,
+          "paid_pct": 84.49,
+          "net_revenue": 5905312500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "CASH",
+          "total_payments": 98978,
+          "paid": 87737,
+          "refunded": 0,
+          "failed": 11241,
+          "pending": 0,
+          "paid_pct": 88.64,
+          "net_revenue": 4118625000.0,
+          "avg_settle_minutes": 33.9
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49816,
+          "paid": 42234,
+          "refunded": 6142,
+          "failed": 1440,
+          "pending": 0,
+          "paid_pct": 84.78,
+          "net_revenue": 1990816500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-07-01",
+          "payment_method": "CARD",
+          "total_payments": 32813,
+          "paid": 27695,
+          "refunded": 4142,
+          "failed": 976,
+          "pending": 0,
+          "paid_pct": 84.4,
+          "net_revenue": 1296553500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 148633,
+          "paid": 125508,
+          "refunded": 18697,
+          "failed": 4428,
+          "pending": 0,
+          "paid_pct": 84.44,
+          "net_revenue": 5908093500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "CASH",
+          "total_payments": 99276,
+          "paid": 87705,
+          "refunded": 0,
+          "failed": 11571,
+          "pending": 0,
+          "paid_pct": 88.34,
+          "net_revenue": 4142070000.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 49481,
+          "paid": 41974,
+          "refunded": 6022,
+          "failed": 1485,
+          "pending": 0,
+          "paid_pct": 84.83,
+          "net_revenue": 1973830000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-08-01",
+          "payment_method": "CARD",
+          "total_payments": 32828,
+          "paid": 27758,
+          "refunded": 4083,
+          "failed": 987,
+          "pending": 0,
+          "paid_pct": 84.56,
+          "net_revenue": 1300943500.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "E_WALLET",
+          "total_payments": 143403,
+          "paid": 121311,
+          "refunded": 17841,
+          "failed": 4251,
+          "pending": 0,
+          "paid_pct": 84.59,
+          "net_revenue": 5702520000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "CASH",
+          "total_payments": 96091,
+          "paid": 84835,
+          "refunded": 0,
+          "failed": 11256,
+          "pending": 0,
+          "paid_pct": 88.29,
+          "net_revenue": 3993797500.0,
+          "avg_settle_minutes": 34.0
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "PAYLATER",
+          "total_payments": 48107,
+          "paid": 40731,
+          "refunded": 5947,
+          "failed": 1429,
+          "pending": 0,
+          "paid_pct": 84.67,
+          "net_revenue": 1922696000.0,
+          "avg_settle_minutes": 0.5
+        },
+        {
+          "order_month": "2026-09-01",
+          "payment_method": "CARD",
+          "total_payments": 31965,
+          "paid": 26927,
+          "refunded": 4038,
+          "failed": 1000,
+          "pending": 0,
+          "paid_pct": 84.24,
+          "net_revenue": 1258310000.0,
+          "avg_settle_minutes": 0.5
+        },
+        "<and 6 more items>"
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        59.192833,
+        59.063916,
+        62.07125
+      ],
+      "mean_ms": 60.109333,
+      "median_ms": 59.192833,
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "operation_id": "PF-10-Q03",
+      "requirement_ids": [
+        "PF-10",
+        "PNF-07"
+      ],
+      "dbms": "couchdb",
+      "operation": "top_outlets_by_food_revenue",
+      "scenario": "analytics",
+      "dataset_size": 2000000,
+      "success": true,
+      "result": [
+        {
+          "merchant_outlet_id": "OUT0006321",
+          "outlet_name": "Seblak Mitra",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Kelapa Gading",
+          "completed_orders": 23,
+          "net_revenue": 2158000.0,
+          "avg_order_value": 98065.22,
+          "refund_rate_pct": 4.35
+        },
+        {
+          "merchant_outlet_id": "OUT0042543",
+          "outlet_name": "Ayam Geprek Jabal",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Pasar Minggu",
+          "completed_orders": 23,
+          "net_revenue": 2130500.0,
+          "avg_order_value": 92630.43,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0032324",
+          "outlet_name": "Pempek Pak Bakiman",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Kelapa Gading",
+          "completed_orders": 20,
+          "net_revenue": 2108500.0,
+          "avg_order_value": 105425.0,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0029987",
+          "outlet_name": "Mie Ayam Puji",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Cilandak",
+          "completed_orders": 24,
+          "net_revenue": 2105500.0,
+          "avg_order_value": 87729.17,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0030640",
+          "outlet_name": "Sate Bu Rini",
+          "outlet_status": "OPEN",
+          "city": "Surabaya",
+          "area_name": "Wonokromo",
+          "completed_orders": 28,
+          "net_revenue": 2094000.0,
+          "avg_order_value": 77214.29,
+          "refund_rate_pct": 3.57
+        },
+        {
+          "merchant_outlet_id": "OUT0005977",
+          "outlet_name": "Warung Icha",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Cengkareng",
+          "completed_orders": 17,
+          "net_revenue": 2058000.0,
+          "avg_order_value": 121058.82,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0025811",
+          "outlet_name": "Pempek Kania",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Kebayoran Baru",
+          "completed_orders": 19,
+          "net_revenue": 2028000.0,
+          "avg_order_value": 106736.84,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0011914",
+          "outlet_name": "Gudeg Pak Baktiadi",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Cengkareng",
+          "completed_orders": 19,
+          "net_revenue": 2024000.0,
+          "avg_order_value": 106526.32,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0020758",
+          "outlet_name": "Kedai Kopi Pak Aris",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Cilandak",
+          "completed_orders": 17,
+          "net_revenue": 2014000.0,
+          "avg_order_value": 118470.59,
+          "refund_rate_pct": 0.0
+        },
+        {
+          "merchant_outlet_id": "OUT0009130",
+          "outlet_name": "Martabak Teguh",
+          "outlet_status": "OPEN",
+          "city": "Jakarta",
+          "area_name": "Cengkareng",
+          "completed_orders": 21,
+          "net_revenue": 2011500.0,
+          "avg_order_value": 95785.71,
+          "refund_rate_pct": 0.0
+        }
+      ],
+      "validation": {
+        "passed": true,
+        "passed_runs": 3,
+        "failed_runs": 0
+      },
+      "warmups": 1,
+      "repeats": 3,
+      "measurements_ms": [
+        2679.5085,
+        2651.61275,
+        2652.691917
+      ],
+      "mean_ms": 2661.271056,
+      "median_ms": 2652.691917,
+      "status": "passed",
+      "errors": []
+    }
+  ]
+}

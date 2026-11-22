@@ -1,0 +1,130 @@
+{
+  "checked_at_utc": "2026-11-21T23:08:34.069723+00:00",
+  "passed": true,
+  "seconds": 21.6,
+  "tables": [
+    {
+      "table": "service_orders",
+      "database": "grab_orders",
+      "csv_rows": 2000000,
+      "couchdb_rows": 2000000,
+      "match": true
+    },
+    {
+      "table": "food_orders",
+      "database": "grab_orders",
+      "csv_rows": 640665,
+      "couchdb_rows": 640665,
+      "match": true
+    },
+    {
+      "table": "mobility_orders",
+      "database": "grab_orders",
+      "csv_rows": 640134,
+      "couchdb_rows": 640134,
+      "match": true
+    },
+    {
+      "table": "delivery_orders",
+      "database": "grab_orders",
+      "csv_rows": 719201,
+      "couchdb_rows": 719201,
+      "match": true
+    },
+    {
+      "table": "payments",
+      "database": "grab_orders",
+      "csv_rows": 2000000,
+      "couchdb_rows": 2000000,
+      "match": true
+    },
+    {
+      "table": "trips",
+      "database": "grab_orders",
+      "csv_rows": 1957707,
+      "couchdb_rows": 1957707,
+      "match": true
+    },
+    {
+      "table": "driver_assignments",
+      "database": "grab_orders",
+      "csv_rows": 3215235,
+      "couchdb_rows": 3215235,
+      "match": true
+    },
+    {
+      "table": "driver_partners",
+      "database": "grab_fleet",
+      "csv_rows": 100000,
+      "couchdb_rows": 100000,
+      "match": true
+    },
+    {
+      "table": "vehicles",
+      "database": "grab_fleet",
+      "csv_rows": 110076,
+      "couchdb_rows": 110076,
+      "match": true
+    },
+    {
+      "table": "customers",
+      "database": "grab_customers",
+      "csv_rows": 200000,
+      "couchdb_rows": 200000,
+      "match": true
+    },
+    {
+      "table": "service_areas",
+      "database": "grab_geo",
+      "csv_rows": 23,
+      "couchdb_rows": 23,
+      "match": true
+    },
+    {
+      "table": "locations",
+      "database": "grab_geo",
+      "csv_rows": 400000,
+      "couchdb_rows": 400000,
+      "match": true
+    },
+    {
+      "table": "merchant_outlets",
+      "database": "grab_geo",
+      "csv_rows": 60000,
+      "couchdb_rows": 60000,
+      "match": true
+    }
+  ],
+  "documents_per_database": {
+    "grab_orders": 2000000,
+    "grab_fleet": 100000,
+    "grab_customers": 200000,
+    "grab_geo": 460023
+  },
+  "samples": {
+    "orders": {
+      "sampled": 1000,
+      "mismatches": []
+    },
+    "customers": {
+      "sampled": 1000,
+      "mismatches": []
+    },
+    "driver_partners+vehicles": {
+      "sampled": 1000,
+      "mismatches": []
+    },
+    "service_areas": {
+      "sampled": 23,
+      "mismatches": []
+    },
+    "locations": {
+      "sampled": 1000,
+      "mismatches": []
+    },
+    "merchant_outlets": {
+      "sampled": 1000,
+      "mismatches": []
+    }
+  }
+}
