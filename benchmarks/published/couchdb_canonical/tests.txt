@@ -32,4 +32,4 @@ tests/test_couchdb_units.py::test_order_document_round_trip [32mPASSED[0m[32m
 tests/test_couchdb_units.py::test_streamed_view_rows_survive_chunk_boundaries [32mPASSED[0m[32m [ 96%][0m
 tests/test_couchdb_units.py::test_design_documents_are_well_formed [32mPASSED[0m[32m [100%][0m
 
-[32m============================== [32m[1m26 passed[0m[32m in 0.80s[0m[32m ==============================[0m
+[32m============================== [32m[1m26 passed[0m[32m in 0.70s[0m[32m ==============================[0m

@@ -1,7 +1,7 @@
 {
-  "checked_at_utc": "2026-11-21T23:08:34.069723+00:00",
+  "checked_at_utc": "2026-11-22T01:43:42.983369+00:00",
   "passed": true,
-  "seconds": 21.6,
+  "seconds": 20.2,
   "tables": [
     {
       "table": "service_orders",

@@ -1,10 +1,8 @@
 {
-  "run_started_utc": "2026-11-21T23:08:11.612010+00:00",
-  "git_commit": "51e8a45c289ef5b12d4a0c40413c48b3f6efac66",
-  "git_branch": "def/feat/coachdb",
-  "git_uncommitted_changes": [
-    "M docker/compose.yaml"
-  ],
+  "run_started_utc": "2026-11-22T01:43:21.979877+00:00",
+  "git_commit": "954367bae30e6dd952b264a62dbbf434a409aedc",
+  "git_branch": "main",
+  "git_uncommitted_changes": [],
   "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
   "cpu": "Apple M5",
   "cpu_cores": 10,
@@ -54,5 +52,5 @@
     "RUN_BENCHMARK": false,
     "RUN_TESTS": true
   },
-  "run_finished_utc": "2026-11-21T23:09:17.130154+00:00"
+  "run_finished_utc": "2026-11-22T01:44:27.529584+00:00"
 }
