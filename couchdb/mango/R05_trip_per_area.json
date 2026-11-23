@@ -1,0 +1,26 @@
+{
+  "operasi": "PF-09-Q01 (R5)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk jumlah trip per service area.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/trips_by_start_area."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "trips": {
+        "$elemMatch": {
+          "trip_id": {
+            "$exists": true
+          }
+        }
+      }
+    },
+    "fields": [
+      "trips"
+    ]
+  }
+}

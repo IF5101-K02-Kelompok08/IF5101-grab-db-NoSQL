@@ -1,0 +1,21 @@
+{
+  "operasi": "PF-03-Q02 (W5), langkah 1 dari 2",
+  "database": "grab_orders",
+  "keterangan": "Ambil order yang trip-nya sedang IN_PROGRESS, untuk diselesaikan.",
+  "catatan": [
+    "Trip jadi COMPLETED, dan assignment yang ACCEPTED diisi ended_at.",
+    "Order disimpan duluan, baru driver di langkah 2, karena CouchDB tidak punya transaksi antardokumen."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999001",
+      "trips": {
+        "$elemMatch": {
+          "trip_id": "TRP9999001",
+          "trip_status": "IN_PROGRESS"
+        }
+      }
+    }
+  }
+}

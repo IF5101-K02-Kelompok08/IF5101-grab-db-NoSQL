@@ -1,0 +1,20 @@
+{
+  "operasi": "PF-01-Q03 (W1), langkah 2 dari 2",
+  "database": "grab_geo",
+  "keterangan": "Ambil lokasi jemput (LOC0000001) dan tujuan (LOC0000002) sekaligus.",
+  "catatan": [
+    "Rentang _id dipakai karena $in pada _id tidak pakai index dan malah scan semua dokumen.",
+    "Hasilnya harus 2 dokumen. service_area_id lokasi jemput disalin ke trip sebagai start_service_area_id.",
+    "Setelah ini, dokumen order baru (order, subtipe mobility, payment, dan trip SEARCHING) disimpan dengan satu PUT /grab_orders/ORD9999001."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": {
+        "$gte": "LOC0000001",
+        "$lte": "LOC0000002"
+      },
+      "type": "location"
+    }
+  }
+}

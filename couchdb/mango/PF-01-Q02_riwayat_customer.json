@@ -1,0 +1,30 @@
+{
+  "operasi": "PF-01-Q02",
+  "database": "grab_orders",
+  "keterangan": "20 pesanan terbaru milik satu customer.",
+  "catatan": [
+    "Query ini ditolak CouchDB: \"No index exists for this sort\". sort di Mango wajib ada index-nya.",
+    "Tidak ada index Mango untuk customer_id + created_at, jadi tanpa sort pun query ini scan 2 juta order.",
+    "Implementasinya pakai view ops/by_customer dengan key [customer_id, created_at]."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "customer_id": "CUS0195816"
+    },
+    "fields": [
+      "_id",
+      "created_at",
+      "order_status",
+      "service_type",
+      "total_amount"
+    ],
+    "sort": [
+      {
+        "created_at": "desc"
+      }
+    ],
+    "limit": 20
+  }
+}

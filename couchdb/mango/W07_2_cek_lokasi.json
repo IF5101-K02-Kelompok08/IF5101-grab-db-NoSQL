@@ -1,0 +1,19 @@
+{
+  "operasi": "PF-04-Q01 (W7), langkah 2 dari 2",
+  "database": "grab_geo",
+  "keterangan": "Ambil lokasi jemput dan tujuan untuk trip yang dibuat setelah pembayaran berhasil.",
+  "catatan": [
+    "Sama seperti W01_2_cek_lokasi.",
+    "Setelah ini order disimpan 4 kali (4 revisi): payment PENDING, FAILED, PENDING, lalu PAID beserta order CONFIRMED dan trip SEARCHING."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": {
+        "$gte": "LOC0000001",
+        "$lte": "LOC0000002"
+      },
+      "type": "location"
+    }
+  }
+}

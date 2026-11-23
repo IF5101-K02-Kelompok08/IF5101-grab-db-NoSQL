@@ -1,0 +1,17 @@
+{
+  "operasi": "PF-04-Q01 (W7), langkah 1 dari 2",
+  "database": "grab_customers",
+  "keterangan": "Pastikan customer CUS0000001 ada sebelum checkout.",
+  "catatan": [
+    "Sama seperti W01_1_cek_customer."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "CUS0000001"
+    },
+    "fields": [
+      "_id"
+    ]
+  }
+}

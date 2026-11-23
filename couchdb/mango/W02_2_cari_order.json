@@ -1,0 +1,22 @@
+{
+  "operasi": "PF-02-Q01 (W2), langkah 2 dari 2",
+  "database": "grab_orders",
+  "keterangan": "Ambil order yang trip-nya masih SEARCHING, untuk ditambahkan assignment PENDING.",
+  "catatan": [
+    "$elemMatch memastikan trip TRP9999001 masih SEARCHING, sama seperti WHERE trip_status = 'SEARCHING'.",
+    "Sebelum menulis, cek juga di Python bahwa trip belum punya assignment PENDING atau ACCEPTED.",
+    "Setelah assignment ditambahkan, dokumen disimpan dengan PUT membawa _rev dari hasil query ini."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999001",
+      "trips": {
+        "$elemMatch": {
+          "trip_id": "TRP9999001",
+          "trip_status": "SEARCHING"
+        }
+      }
+    }
+  }
+}

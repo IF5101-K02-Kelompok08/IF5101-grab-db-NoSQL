@@ -1,0 +1,30 @@
+{
+  "operasi": "PF-02-Q04 (R4)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk trip yang ditawarkan minimal 3 kali lalu diterima.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Syarat \"minimal 3 tawaran\" juga tidak bisa ditulis di Mango, karena $size cuma cocok untuk panjang array yang persis sama.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/trip_attempts."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "trips": {
+        "$elemMatch": {
+          "assignments": {
+            "$elemMatch": {
+              "assignment_status": "ACCEPTED"
+            }
+          }
+        }
+      }
+    },
+    "fields": [
+      "_id",
+      "trips"
+    ]
+  }
+}

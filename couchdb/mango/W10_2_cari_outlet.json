@@ -1,0 +1,28 @@
+{
+  "operasi": "PF-06-Q02 (W10), langkah 2 dari 3",
+  "database": "grab_geo",
+  "keterangan": "Cari outlet di area SAR9999101 yang belum INACTIVE.",
+  "catatan": [
+    "outlet_status cuma boleh OPEN, CLOSED, atau INACTIVE, jadi <> 'INACTIVE' ditulis sebagai $in OPEN dan CLOSED.",
+    "Index open-outlets-by-area baru dipakai kalau semua 4 field-nya ada di selector, jadi outlet_name dan merchant_outlet_id ditambahkan dengan $exists true.",
+    "Tanpa $exists, CouchDB cek 460 ribu dokumen (sekitar 25 detik). Dengan $exists, cuma 2 dokumen."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "location.service_area_id": "SAR9999101",
+      "outlet_status": {
+        "$in": [
+          "OPEN",
+          "CLOSED"
+        ]
+      },
+      "outlet_name": {
+        "$exists": true
+      },
+      "merchant_outlet_id": {
+        "$exists": true
+      }
+    }
+  }
+}

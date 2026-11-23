@@ -1,0 +1,30 @@
+{
+  "operasi": "PF-05-Q01 (R10), langkah 1 dari 2",
+  "database": "grab_geo",
+  "keterangan": "Cari service area Tebet, Jakarta yang masih ACTIVE.",
+  "catatan": [
+    "Semua _id service area diawali SAR, jadi rentang $gt \"SAR\" dan $lt \"SAS\" membatasi pencarian ke dokumen area saja.",
+    "Dengan rentang ini CouchDB cuma cek 23 dokumen. Tanpa rentang, CouchDB cek semua 460 ribu dokumen grab_geo (sekitar 29 detik).",
+    "Peringatan \"No matching index found\" tetap muncul, karena yang dipakai index bawaan _all_docs, bukan index Mango."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": {
+        "$gt": "SAR",
+        "$lt": "SAS"
+      },
+      "type": "service_area",
+      "city": "Jakarta",
+      "area_name": "Tebet",
+      "area_status": "ACTIVE"
+    },
+    "fields": [
+      "_id",
+      "area_name",
+      "city",
+      "area_status"
+    ],
+    "limit": 1
+  }
+}

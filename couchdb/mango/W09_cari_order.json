@@ -1,0 +1,22 @@
+{
+  "operasi": "PF-04-Q03 (W9)",
+  "database": "grab_orders",
+  "keterangan": "Ambil ride tunai yang trip-nya sedang IN_PROGRESS, untuk diselesaikan dan dibayar.",
+  "catatan": [
+    "Ride tunai yang sedang jalan sudah disiapkan oleh data uji (ORD9999102).",
+    "Trip dan order jadi COMPLETED, payment CASH jadi PAID, semuanya dalam satu PUT."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999102",
+      "payment.payment_method": "CASH",
+      "trips": {
+        "$elemMatch": {
+          "trip_id": "TRP9999102",
+          "trip_status": "IN_PROGRESS"
+        }
+      }
+    }
+  }
+}

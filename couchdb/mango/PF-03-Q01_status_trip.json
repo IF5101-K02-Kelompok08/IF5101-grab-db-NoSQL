@@ -1,0 +1,27 @@
+{
+  "operasi": "PF-03-Q01",
+  "database": "grab_orders",
+  "keterangan": "Status perjalanan berdasarkan trip_id.",
+  "catatan": [
+    "Trip disimpan di dalam array trips di dokumen order, jadi dicari pakai $elemMatch.",
+    "$elemMatch cocok kalau ada satu elemen array yang memenuhi semua syarat di dalamnya.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view ops/by_trip dengan key trip_id."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "trips": {
+        "$elemMatch": {
+          "trip_id": "TRP0000001"
+        }
+      }
+    },
+    "fields": [
+      "_id",
+      "order_status",
+      "trips"
+    ]
+  }
+}

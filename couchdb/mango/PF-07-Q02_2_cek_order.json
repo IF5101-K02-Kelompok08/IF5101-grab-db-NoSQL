@@ -1,0 +1,21 @@
+{
+  "operasi": "PF-07-Q02, langkah 2 dari 2",
+  "database": "grab_orders",
+  "keterangan": "Cek apakah masih ada food order yang merujuk ke outlet OUT9999202.",
+  "catatan": [
+    "CouchDB tidak punya foreign key, jadi aplikasi yang harus cek referensinya sebelum DELETE.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya menghitung referensi pakai view ops/food_by_outlet."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "service_type": "FOOD",
+      "food.merchant_outlet_id": "OUT9999202"
+    },
+    "fields": [
+      "_id"
+    ]
+  }
+}

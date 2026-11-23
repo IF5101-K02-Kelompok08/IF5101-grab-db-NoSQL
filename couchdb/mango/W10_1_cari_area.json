@@ -1,0 +1,16 @@
+{
+  "operasi": "PF-06-Q02 (W10), langkah 1 dari 3",
+  "database": "grab_geo",
+  "keterangan": "Ambil service area SAR9999101 yang masih ACTIVE, lalu ubah jadi INACTIVE.",
+  "catatan": [
+    "Syarat area_status ACTIVE sama dengan WHERE area_status = 'ACTIVE'.",
+    "Dokumen disimpan dengan PUT membawa _rev dari hasil query ini."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "SAR9999101",
+      "area_status": "ACTIVE"
+    }
+  }
+}

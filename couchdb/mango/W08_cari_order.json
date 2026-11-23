@@ -1,0 +1,16 @@
+{
+  "operasi": "PF-04-Q02 (W8)",
+  "database": "grab_orders",
+  "keterangan": "Ambil order yang masih CONFIRMED untuk dibatalkan customer sebelum dijemput.",
+  "catatan": [
+    "Syarat order_status CONFIRMED sama dengan WHERE order_status = 'CONFIRMED'. Kalau hasilnya kosong, tidak ada yang diubah.",
+    "Order, trip, assignment aktif, dan payment (PAID jadi REFUNDED, PENDING jadi FAILED) diubah dalam satu PUT."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999101",
+      "order_status": "CONFIRMED"
+    }
+  }
+}

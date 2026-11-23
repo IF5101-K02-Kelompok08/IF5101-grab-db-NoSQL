@@ -1,0 +1,15 @@
+{
+  "operasi": "PF-01-Q01",
+  "database": "grab_orders",
+  "keterangan": "Baca satu pesanan lengkap (subtipe, payment, trip, dan assignment) berdasarkan _id.",
+  "catatan": [
+    "Semua data pesanan ada di satu dokumen, jadi tidak perlu join seperti di SQL.",
+    "Selector _id langsung pakai index bawaan _all_docs, jadi cuma 1 dokumen yang dicek."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD0000001"
+    }
+  }
+}

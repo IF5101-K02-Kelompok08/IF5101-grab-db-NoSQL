@@ -1,0 +1,24 @@
+{
+  "operasi": "PF-09-Q02 (R9)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk permintaan food order per area di Oktober 2026.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/food_orders_by_day_area, digabung dengan view geo/outlets_by_area_status."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "service_type": "FOOD",
+      "created_at": {
+        "$gte": "2026-10-01",
+        "$lt": "2026-11-01"
+      }
+    },
+    "fields": [
+      "food.merchant_service_area_id"
+    ]
+  }
+}

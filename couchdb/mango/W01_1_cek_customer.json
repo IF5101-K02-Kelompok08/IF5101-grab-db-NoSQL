@@ -1,0 +1,18 @@
+{
+  "operasi": "PF-01-Q03 (W1), langkah 1 dari 2",
+  "database": "grab_customers",
+  "keterangan": "Pastikan customer CUS0000001 ada sebelum pesanan dibuat.",
+  "catatan": [
+    "CouchDB tidak punya foreign key, jadi aplikasi yang harus cek sendiri.",
+    "Kalau hasilnya kosong, pesanan tidak boleh dibuat."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "CUS0000001"
+    },
+    "fields": [
+      "_id"
+    ]
+  }
+}

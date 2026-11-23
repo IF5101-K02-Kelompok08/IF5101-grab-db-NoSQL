@@ -1,0 +1,26 @@
+{
+  "operasi": "PF-10-Q01 (R6)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk pendapatan bersih dan refund per service area.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/settled_payments_by_area."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "payment.payment_status": {
+        "$in": [
+          "PAID",
+          "REFUNDED"
+        ]
+      }
+    },
+    "fields": [
+      "payment",
+      "trips"
+    ]
+  }
+}

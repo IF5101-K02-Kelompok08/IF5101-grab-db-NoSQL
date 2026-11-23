@@ -1,0 +1,26 @@
+{
+  "operasi": "PF-02-Q02 (W3)",
+  "database": "grab_orders",
+  "keterangan": "Ambil order yang assignment ASN9999001-nya masih PENDING, lalu driver menerima dan perjalanan dimulai.",
+  "catatan": [
+    "$elemMatch dua tingkat: trip yang punya assignment dengan id dan status tersebut.",
+    "Dokumen disimpan dua kali: SEARCHING ke ALLOCATED, lalu ALLOCATED ke IN_PROGRESS.",
+    "Kalau langsung dari SEARCHING ke IN_PROGRESS, validate_doc_update akan menolak."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999001",
+      "trips": {
+        "$elemMatch": {
+          "assignments": {
+            "$elemMatch": {
+              "assignment_id": "ASN9999001",
+              "assignment_status": "PENDING"
+            }
+          }
+        }
+      }
+    }
+  }
+}

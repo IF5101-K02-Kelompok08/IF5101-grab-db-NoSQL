@@ -1,0 +1,15 @@
+{
+  "operasi": "PF-03-Q02 (W5), langkah 2 dari 2",
+  "database": "grab_fleet",
+  "keterangan": "Ambil dokumen driver dari assignment yang ACCEPTED, lalu ubah driver_status jadi ACTIVE.",
+  "catatan": [
+    "Isi _id dengan driver_partner_id dari assignment ACCEPTED di hasil langkah 1. Di data uji nilainya DRV0000001.",
+    "Update ini selalu menghasilkan status yang sama, jadi aman diulang kalau gagal."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "DRV0000001"
+    }
+  }
+}

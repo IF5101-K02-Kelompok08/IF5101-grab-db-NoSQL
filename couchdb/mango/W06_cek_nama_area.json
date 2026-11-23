@@ -1,0 +1,25 @@
+{
+  "operasi": "PF-06-Q01 (W6)",
+  "database": "grab_geo",
+  "keterangan": "Pastikan belum ada service area Cicendo di Bandung sebelum area baru didaftarkan.",
+  "catatan": [
+    "Hasilnya harus kosong. Ini pengganti UNIQUE (city, area_name) di Part 2.",
+    "Rentang _id SAR membatasi pencarian ke 23 dokumen area.",
+    "Setelah itu area, 3 lokasi, dan 2 outlet dikirim sekaligus dengan POST /grab_geo/_bulk_docs.",
+    "_bulk_docs tidak all-or-nothing. Kalau ada dokumen yang gagal, dokumen yang sudah masuk dihapus lagi."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": {
+        "$gt": "SAR",
+        "$lt": "SAS"
+      },
+      "city": "Bandung",
+      "area_name": "Cicendo"
+    },
+    "fields": [
+      "_id"
+    ]
+  }
+}

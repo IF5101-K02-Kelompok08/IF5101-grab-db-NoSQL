@@ -1,0 +1,29 @@
+{
+  "operasi": "PF-08-Q03 (R3)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk jumlah trip dan kendaraan berbeda per tipe kendaraan dan jam.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/vehicle_hourly_usage."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "trips": {
+        "$elemMatch": {
+          "trip_status": {
+            "$in": [
+              "IN_PROGRESS",
+              "COMPLETED"
+            ]
+          }
+        }
+      }
+    },
+    "fields": [
+      "trips"
+    ]
+  }
+}

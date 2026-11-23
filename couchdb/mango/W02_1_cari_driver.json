@@ -1,0 +1,27 @@
+{
+  "operasi": "PF-02-Q01 (W2), langkah 1 dari 2",
+  "database": "grab_fleet",
+  "keterangan": "Cari satu driver ACTIVE yang punya motor ACTIVE.",
+  "catatan": [
+    "Kendaraan disimpan di array vehicles di dokumen driver, jadi dicari pakai $elemMatch.",
+    "Tanpa index pun cepat, karena limit 1 membuat CouchDB berhenti di driver pertama yang cocok (cuma 3 dokumen dicek)."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "type": "driver_partner",
+      "driver_status": "ACTIVE",
+      "vehicles": {
+        "$elemMatch": {
+          "vehicle_type": "Motorcycle",
+          "vehicle_status": "ACTIVE"
+        }
+      }
+    },
+    "fields": [
+      "_id",
+      "vehicles"
+    ],
+    "limit": 1
+  }
+}

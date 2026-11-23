@@ -1,0 +1,34 @@
+{
+  "operasi": "PF-08-Q01 (R1)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk tingkat penerimaan tawaran per driver.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/driver_decisions, lalu nama driver dari view fleet/driver_names."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "trips": {
+        "$elemMatch": {
+          "assignments": {
+            "$elemMatch": {
+              "assignment_status": {
+                "$in": [
+                  "ACCEPTED",
+                  "REJECTED",
+                  "EXPIRED"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "fields": [
+      "trips"
+    ]
+  }
+}

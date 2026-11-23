@@ -1,0 +1,25 @@
+{
+  "operasi": "PF-02-Q03 (W4)",
+  "database": "grab_orders",
+  "keterangan": "Ambil order yang assignment ASN9999002-nya masih PENDING, lalu driver menolak tawaran.",
+  "catatan": [
+    "Bagian W4 yang membuat dan menawarkan order baru sudah disiapkan oleh data uji (ORD9999002).",
+    "Assignment diubah jadi REJECTED dengan end_reason, dan trip tetap SEARCHING supaya bisa ditawarkan lagi."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "ORD9999002",
+      "trips": {
+        "$elemMatch": {
+          "assignments": {
+            "$elemMatch": {
+              "assignment_id": "ASN9999002",
+              "assignment_status": "PENDING"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "operasi": "PF-10-Q03 (R8)",
+  "database": "grab_orders",
+  "keterangan": "Dokumen sumber untuk 10 outlet dengan pendapatan makanan terbesar.",
+  "catatan": [
+    "Mango tidak bisa GROUP BY, COUNT, atau SUM, jadi query ini cuma memilih dokumen sumbernya. Hasilnya masih harus dijumlahkan di Python.",
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain.",
+    "Implementasinya pakai view analytics/food_revenue_by_outlet, lalu data outlet dan area dari grab_geo."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "service_type": "FOOD",
+      "order_status": "COMPLETED"
+    },
+    "fields": [
+      "food.merchant_outlet_id",
+      "total_amount",
+      "payment"
+    ]
+  }
+}

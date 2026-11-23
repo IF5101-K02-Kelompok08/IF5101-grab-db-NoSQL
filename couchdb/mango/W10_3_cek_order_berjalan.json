@@ -1,0 +1,35 @@
+{
+  "operasi": "PF-06-Q02 (W10), langkah 3 dari 3",
+  "database": "grab_orders",
+  "keterangan": "Cari food order yang masih berjalan di outlet hasil langkah 2 (bagian NOT IN (SELECT ...) di SQL).",
+  "catatan": [
+    "Query ini harus scan semua 2 juta order karena tidak ada index Mango yang cocok, jadi cukup dicek pakai _explain. Sekitar 130 detik.",
+    "Implementasinya pakai view ops/food_by_outlet dengan key [merchant_outlet_id, order_status].",
+    "Outlet tanpa order berjalan jadi INACTIVE, yang masih punya order berjalan cukup jadi CLOSED. Semuanya disimpan dengan satu _bulk_docs."
+  ],
+  "hanya_explain": true,
+  "query": {
+    "selector": {
+      "type": "service_order",
+      "service_type": "FOOD",
+      "food.merchant_outlet_id": {
+        "$in": [
+          "OUT9999102",
+          "OUT9999101"
+        ]
+      },
+      "order_status": {
+        "$in": [
+          "PENDING",
+          "CONFIRMED",
+          "IN_PROGRESS"
+        ]
+      }
+    },
+    "fields": [
+      "_id",
+      "order_status",
+      "food.merchant_outlet_id"
+    ]
+  }
+}

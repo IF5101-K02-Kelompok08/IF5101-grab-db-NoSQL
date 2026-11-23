@@ -1,0 +1,16 @@
+{
+  "operasi": "PF-07-Q01, langkah 1 dari 2",
+  "database": "grab_geo",
+  "keterangan": "Ambil outlet OUT9999201 yang mau dihapus.",
+  "catatan": [
+    "Outlet hanya boleh dihapus kalau outlet_status-nya INACTIVE.",
+    "Outlet ini INACTIVE dan tidak dirujuk order, jadi boleh dihapus dengan DELETE /grab_geo/OUT9999201?rev=..."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "_id": "OUT9999201",
+      "type": "merchant_outlet"
+    }
+  }
+}

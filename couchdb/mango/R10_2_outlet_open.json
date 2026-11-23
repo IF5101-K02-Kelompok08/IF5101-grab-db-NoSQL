@@ -1,0 +1,40 @@
+{
+  "operasi": "PF-05-Q01 (R10), langkah 2 dari 2",
+  "database": "grab_geo",
+  "keterangan": "Halaman pertama (20 outlet) outlet yang OPEN di area hasil langkah 1, urut nama.",
+  "catatan": [
+    "SAR0000007 adalah _id area Tebet dari R10_1_cari_area.",
+    "Dokumen outlet menyimpan salinan lokasinya (location.address, latitude, longitude), jadi tidak perlu join ke locations.",
+    "Query ini pakai index open-outlets-by-area. Urutan sort harus sama dengan urutan field di index itu.",
+    "Dua field pertama nilainya tetap, jadi hasilnya terurut sama seperti ORDER BY outlet_name, merchant_outlet_id."
+  ],
+  "hanya_explain": false,
+  "query": {
+    "selector": {
+      "location.service_area_id": "SAR0000007",
+      "outlet_status": "OPEN"
+    },
+    "sort": [
+      {
+        "location.service_area_id": "asc"
+      },
+      {
+        "outlet_status": "asc"
+      },
+      {
+        "outlet_name": "asc"
+      },
+      {
+        "merchant_outlet_id": "asc"
+      }
+    ],
+    "fields": [
+      "merchant_outlet_id",
+      "outlet_name",
+      "location.address",
+      "location.latitude",
+      "location.longitude"
+    ],
+    "limit": 20
+  }
+}
