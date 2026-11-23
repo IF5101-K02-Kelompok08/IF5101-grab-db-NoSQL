@@ -226,3 +226,6 @@ __marimo__/
 /benchmarks/results/*
 !/benchmarks/results/.gitkeep
 /data/reference/
+
+# macOS
+.DS_Store
